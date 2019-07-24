@@ -1,0 +1,173 @@
+2019-07-24 12:32:16.145 INFO  [28154] [Opticks::init@320] COMPUTE_MODE forced_compute 
+2019-07-24 12:32:16.157 INFO  [28154] [BOpticksResource::setupViaKey@531] 
+             BOpticksKey  :  
+      spec (OPTICKS_KEY)  : OKX4Test.X4PhysicalVolume.lWorld0x4bc2710_PV.f6cc352e44243f8fa536ab483ad390ce
+                 exename  : OKX4Test
+         current_exename  : OKG4Test
+                   class  : X4PhysicalVolume
+                 volname  : lWorld0x4bc2710_PV
+                  digest  : f6cc352e44243f8fa536ab483ad390ce
+                  idname  : OKX4Test_lWorld0x4bc2710_PV_g4live
+                  idfile  : g4ok.gltf
+                  idgdml  : g4ok.gdml
+                  layout  : 1
+
+2019-07-24 12:32:16.158 INFO  [28154] [Opticks::initResource@676]  (direct mode) NOT setting IDPATH envvar  [/home/opc/opticks/geocache/OKX4Test_lWorld0x4bc2710_PV_g4live/g4ok_gltf/f6cc352e44243f8fa536ab483ad390ce/1]
+2019-07-24 12:32:16.158 INFO  [28154] [Opticks::loadOriginCacheMeta@1656]  cachemetapath /home/opc/opticks/geocache/OKX4Test_lWorld0x4bc2710_PV_g4live/g4ok_gltf/f6cc352e44243f8fa536ab483ad390ce/1/cachemeta.json
+2019-07-24 12:32:16.158 INFO  [28154] [NMeta::dump@129] Opticks::loadOriginCacheMeta
+2019-07-24 12:32:16.158 INFO  [28154] [Opticks::ExtractCacheMetaGDMLPath@1676]  argline /home/opc/opticks/lib/OKX4Test --okx4 --g4codegen --deletegeocache --gdmlpath /home/opc/opticks/opticksdata/export/juno1808/g4_00_v5.gdml --csgskiplv 22 --runfolder geocache-j1808-v5 --runcomment fix-lv10-coincidence-speckle 
+2019-07-24 12:32:16.158 INFO  [28154] [Opticks::ExtractCacheMetaGDMLPath@1679]  gdmlpath /home/opc/opticks/opticksdata/export/juno1808/g4_00_v5.gdml
+2019-07-24 12:32:16.158 INFO  [28154] [Opticks::loadOriginCacheMeta@1660]  gdmlpath /home/opc/opticks/opticksdata/export/juno1808/g4_00_v5.gdml
+2019-07-24 12:32:16.158 WARN  [28154] [OpticksHub::configure@313] OpticksHub::configure FORCED COMPUTE MODE : as remote session detected 
+2019-07-24 12:32:16.159 INFO  [28154] [OpticksHub::loadGeometry@502] [ /home/opc/opticks/geocache/OKX4Test_lWorld0x4bc2710_PV_g4live/g4ok_gltf/f6cc352e44243f8fa536ab483ad390ce/1
+2019-07-24 12:32:16.159 ERROR [28154] [GGeo::init@429]  idpath /home/opc/opticks/geocache/OKX4Test_lWorld0x4bc2710_PV_g4live/g4ok_gltf/f6cc352e44243f8fa536ab483ad390ce/1 cache_exists 1 cache_requested 1 m_loaded_from_cache 1 m_live 0 will_load_libs 1
+2019-07-24 12:32:16.697 INFO  [28154] [NMeta::dump@129] GGeo::loadCacheMeta
+2019-07-24 12:32:16.697 INFO  [28154] [NMeta::dump@129] GGeo::loadCacheMeta.lv2sd
+2019-07-24 12:32:16.697 INFO  [28154] [Opticks::ExtractCacheMetaGDMLPath@1676]  argline /home/opc/opticks/lib/OKX4Test --okx4 --g4codegen --deletegeocache --gdmlpath /home/opc/opticks/opticksdata/export/juno1808/g4_00_v5.gdml --csgskiplv 22 --runfolder geocache-j1808-v5 --runcomment fix-lv10-coincidence-speckle 
+2019-07-24 12:32:16.697 INFO  [28154] [Opticks::ExtractCacheMetaGDMLPath@1679]  gdmlpath /home/opc/opticks/opticksdata/export/juno1808/g4_00_v5.gdml
+2019-07-24 12:32:16.697 FATAL [28154] [GGeo::loadCacheMeta@809]  origin_gdmlpath /home/opc/opticks/opticksdata/export/juno1808/g4_00_v5.gdml
+2019-07-24 12:32:16.712 INFO  [28154] [OpticksHub::loadGeometry@520] --test modifying geometry
+2019-07-24 12:32:16.713 ERROR [28154] [NCSGList::load@230]  VERBOSITY 0 basedir /tmp/opc/opticks/tboolean-box txtpath /tmp/opc/opticks/tboolean-box/csg.txt nbnd 2
+2019-07-24 12:32:16.714 ERROR [28154] [NCSGList::add@121]  add tree, boundary: Rock//perfectAbsorbSurface/Vacuum
+2019-07-24 12:32:16.716 ERROR [28154] [NCSGList::add@121]  add tree, boundary: Vacuum///GlassSchottF2
+2019-07-24 12:32:16.716 ERROR [28154] [GGeoTest::checkPts@185]  proxy 0 proxy_idx -1
+2019-07-24 12:32:16.716 ERROR [28154] [GGeoTest::checkPts@191]  basegeolib  nmm 6
+2019-07-24 12:32:16.716 ERROR [28154] [GGeoTest::checkPts@201]   0  GPts.NumPt 201 lvIdx ( 39 12 11 3 0 1 2 10 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 38 37 36 35 34 14 13 31 28 29 30 33 32)
+2019-07-24 12:32:16.716 ERROR [28154] [GGeoTest::checkPts@201]   1  GPts.NumPt 5 lvIdx ( 27 25 23 24 26)
+2019-07-24 12:32:16.716 ERROR [28154] [GGeoTest::checkPts@201]   2  GPts.NumPt 5 lvIdx ( 17 21 20 18 19)
+2019-07-24 12:32:16.716 ERROR [28154] [GGeoTest::checkPts@201]   3  GPts.NumPt 130 lvIdx ( 7 6 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4)
+2019-07-24 12:32:16.716 ERROR [28154] [GGeoTest::checkPts@201]   4  GPts.NumPt 1 lvIdx ( 15)
+2019-07-24 12:32:16.716 ERROR [28154] [GGeoTest::checkPts@201]   5  GPts.NumPt 1 lvIdx ( 16)
+2019-07-24 12:32:16.716 ERROR [28154] [GGeoTest::init@140] [
+2019-07-24 12:32:16.716 ERROR [28154] [GGeoTest::initCreateCSG@230]  m_csgpath /tmp/opc/opticks/tboolean-box
+2019-07-24 12:32:16.716 ERROR [28154] [GGeoTest::importCSG@322] [
+2019-07-24 12:32:16.717 ERROR [28154] [GGeoTest::prepareMeshes@384] [
+2019-07-24 12:32:16.751 ERROR [28154] [GGeoTest::prepareMeshes@405] ] csgpath /tmp/opc/opticks/tboolean-box m_numtree 2 verbosity 0
+2019-07-24 12:32:16.751 ERROR [28154] [GGeoTest::adjustContainer@510]  containerautosize ENABLED by metadata on container CSG 1
+2019-07-24 12:32:16.751 ERROR [28154] [GGeoTest::adjustContainer@519]  m_numtree 2
+2019-07-24 12:32:16.751 ERROR [28154] [NCSGList::updateBoundingBox@166] [ m_bbox  mi (      0.000     0.000     0.000) mx (      0.000     0.000     0.000) si (      0.000     0.000     0.000) EMPTY
+2019-07-24 12:32:16.751 ERROR [28154] [NCSGList::updateBoundingBox@179]  bba  mi (   -150.000  -150.000  -100.000) mx (    150.000   150.000   100.000) si (    300.000   300.000   200.000)
+2019-07-24 12:32:16.751 ERROR [28154] [NCSGList::updateBoundingBox@183] ] m_bbox  mi (   -150.000  -150.000  -100.000) mx (    150.000   150.000   100.000) si (    300.000   300.000   200.000)
+2019-07-24 12:32:16.751 ERROR [28154] [NCSGList::adjustContainerSize@188] [
+2019-07-24 12:32:16.751 ERROR [28154] [NCSGList::adjustContainerSize@204] ] m_bbox  mi (   -450.000  -450.000  -450.000) mx (    450.000   450.000   450.000) si (    900.000   900.000   900.000)
+2019-07-24 12:32:16.751 ERROR [28154] [GGeoTest::adjustContainer@533]  container_index 0 container_bba  mi (   -450.000  -450.000  -450.000) mx (    450.000   450.000   450.000) si (    900.000   900.000   900.000)
+2019-07-24 12:32:16.752 ERROR [28154] [GGeoTest::importCSG@367] ]
+2019-07-24 12:32:16.759 ERROR [28154] [GGeoTest::initCreateCSG@290]  tmm.ce 0.0000,0.0000,0.0000,450.0000
+2019-07-24 12:32:16.759 ERROR [28154] [GGeoTest::init@168] ]
+2019-07-24 12:32:16.759 ERROR [28154] [Opticks::setupTimeDomain@2230]  animtimerange -1.0000,-1.0000,0.0000,0.0000
+2019-07-24 12:32:16.759 INFO  [28154] [Opticks::setupTimeDomain@2241]  cfg.getTimeMaxThumb [--timemaxthumb] 6 cfg.getAnimTimeMax [--animtimemax] -1 cfg.getAnimTimeMax [--animtimemax] -1 speed_of_light (mm/ns) 300 extent (mm) 450 rule_of_thumb_timemax (ns) 9 u_timemax 9 u_animtimemax 9
+2019-07-24 12:32:16.761 INFO  [28154] [OpticksHub::loadGeometry@546] ]
+2019-07-24 12:32:16.769 ERROR [28154] [nnode::generateParPoints@1797]  sheetmask 1
+2019-07-24 12:32:16.769 ERROR [28154] [nnode::selectSheets@1786]  nsa 6 sheetmask 1 ns 1
+2019-07-24 12:32:16.769 INFO  [28154] [nnode::generateParPointsSheet@1821]  sheet 0 num 100000
+2019-07-24 12:32:17.759 ERROR [28154] [CTestDetector::init@70] [
+2019-07-24 12:32:17.759 ERROR [28154] [CTestDetector::makeDetector_NCSG@238]  numVolumes 2
+2019-07-24 12:32:17.759 ERROR [28154] [NCSGList::createUniverse@316]  bnd0 Rock//perfectAbsorbSurface/Vacuum ubnd Rock///Rock scale 1 delta 1
+2019-07-24 12:32:17.759 ERROR [28154] [NCSGList::createUniverse@323]  m_bbox  mi (   -450.000  -450.000  -450.000) mx (    450.000   450.000   450.000) si (    900.000   900.000   900.000)
+2019-07-24 12:32:17.760 ERROR [28154] [NCSGList::createUniverse@334]  universe.get_root_csgname box
+2019-07-24 12:32:17.764 ERROR [28154] [CTestDetector::makeChildVolume@157]  lvn UNIVERSE_LV
+2019-07-24 12:32:17.764 ERROR [28154] [CTestDetector::makeChildVolume@184]  csg.has_root_transform Id
+2019-07-24 12:32:17.765 ERROR [28154] [CTestDetector::makeChildVolume@200]  csg.spec Rock///Rock csg.getRootCSGName box boundary 2 mother - lv UNIVERSE_LV pv UNIVERSE_PV mat Rock
+2019-07-24 12:32:17.765 ERROR [28154] [CTestDetector::makeDetector_NCSG@267]    0 spec Rock//perfectAbsorbSurface/Vacuum
+2019-07-24 12:32:17.765 ERROR [28154] [CTestDetector::makeChildVolume@157]  lvn box_lv0_
+2019-07-24 12:32:17.765 ERROR [28154] [CTestDetector::makeChildVolume@184]  csg.has_root_transform Id
+2019-07-24 12:32:17.765 ERROR [28154] [CTestDetector::makeChildVolume@200]  csg.spec Rock//perfectAbsorbSurface/Vacuum csg.getRootCSGName box boundary 0 mother UNIVERSE_LV lv box_lv0_ pv box_pv0_ mat Vacuum
+2019-07-24 12:32:17.765 ERROR [28154] [CTestDetector::makeDetector_NCSG@267]    1 spec Vacuum///GlassSchottF2
+2019-07-24 12:32:17.766 ERROR [28154] [CTestDetector::makeChildVolume@157]  lvn box3_lv1_
+2019-07-24 12:32:17.766 ERROR [28154] [CTestDetector::makeChildVolume@184]  csg.has_root_transform Id
+2019-07-24 12:32:17.766 ERROR [28154] [CTestDetector::makeChildVolume@200]  csg.spec Vacuum///GlassSchottF2 csg.getRootCSGName box3 boundary 1 mother box_lv0_ lv box3_lv1_ pv box3_pv1_ mat GlassSchottF2
+2019-07-24 12:32:17.766 ERROR [28154] [CDetector::hookupSD@131]  NOT INVOKING SetSensitiveDetector ON ANY VOLUMES AS nlvsd is zero or m_sd NULL  nlvsd 0 m_sd 0x78317b0 sdname SD0
+2019-07-24 12:32:17.766 ERROR [28154] [CTestDetector::init@87] ]
+2019-07-24 12:32:17.766 FATAL [28154] [Opticks::setSpaceDomain@2181]  changing w 450 -> 451
+2019-07-24 12:32:17.766 ERROR [28154] [Opticks::setupTimeDomain@2230]  animtimerange -1.0000,-1.0000,0.0000,0.0000
+2019-07-24 12:32:17.766 INFO  [28154] [Opticks::setupTimeDomain@2241]  cfg.getTimeMaxThumb [--timemaxthumb] 6 cfg.getAnimTimeMax [--animtimemax] -1 cfg.getAnimTimeMax [--animtimemax] -1 speed_of_light (mm/ns) 300 extent (mm) 451 rule_of_thumb_timemax (ns) 9.02 u_timemax 9.02 u_animtimemax 9.02
+2019-07-24 12:32:17.846 INFO  [28154] [OContext::InitRTX@250]  --rtx 0 setting  OFF
+2019-07-24 12:32:17.847 INFO  [28154] [OContext::CheckDevices@185] 
+Device 0           Tesla P100-SXM2-16GB ordinal 0 Compute Support: 6 0 Total Memory: 17071734784
+
+2019-07-24 12:32:18.373 INFO  [28154] [OScene::init@100] [
+2019-07-24 12:32:18.375 INFO  [28154] [OGeo::init@193] OGeo  top Sbvh ggg Sbvh assembly Sbvh instance Sbvh
+2019-07-24 12:32:18.375 INFO  [28154] [GGeoLib::dump@347] OGeo::convert GGeoLib ANALYTIC  numMergedMesh 1 ptr 0x5b2ad50
+2019-07-24 12:32:18.375 INFO  [28154] [OGeo::convert@219] [ nmm 1
+2019-07-24 12:32:18.760 INFO  [28154] [OGeo::convert@232] ] nmm 1
+2019-07-24 12:32:18.761 INFO  [28154] [OScene::init@163] ]
+2019-07-24 12:32:19.844 INFO  [28154] [OpEngine::uploadEvent@117] .
+2019-07-24 12:32:19.844 INFO  [28154] [OContext::createBuffer@817]               source          100000,4,4 mode : COMPUTE  BufferControl : source : OPTIX_INPUT_ONLY UPLOAD_WITH_CUDA BUFFER_COPY_ON_DIRTY COMPUTE_MODE VERBOSE_MODE 
+2019-07-24 12:32:19.845 INFO  [28154] [OContext::upload@693] UPLOAD_WITH_CUDA markDirty (100000,4,4)  NumBytes(0) 6400000 NumBytes(1) 64 NumValues(0) 1600000 NumValues(1) 16{}
+2019-07-24 12:32:19.846 INFO  [28154] [OContext::upload@699] UPLOAD_WITH_CUDA markDirty DONE (100000,4,4)  NumBytes(0) 6400000 NumBytes(1) 64 NumValues(0) 1600000 NumValues(1) 16{}
+2019-07-24 12:32:19.847 INFO  [28154] [OpEngine::propagate@126] [
+2019-07-24 12:32:19.847 INFO  [28154] [OpSeeder::seedPhotonsFromGenstepsViaOptiX@154] SEEDING TO SEED BUF  
+2019-07-24 12:32:19.847 INFO  [28154] [OEvent::markDirty@201] OEvent::markDirty(source) PROCEED
+2019-07-24 12:32:19.847 INFO  [28154] [OpEngine::propagate@136] ( propagator.launch 
+2019-07-24 12:32:21.284 INFO  [28154] [OPropagator::prelaunch@164] 1 : (0;100000,1) 
+2019-07-24 12:32:21.284 INFO  [28154] [BTimes::dump@158] OPropagator::prelaunch
+2019-07-24 12:32:21.284 INFO  [28154] [OPropagator::launch@193] LAUNCH NOW -
+2019-07-24 12:32:21.297 INFO  [28154] [OPropagator::launch@199] LAUNCH DONE
+2019-07-24 12:32:21.297 INFO  [28154] [OPropagator::launch@201] 1 : (0;100000,1) 
+2019-07-24 12:32:21.297 INFO  [28154] [BTimes::dump@158] OPropagator::launch
+2019-07-24 12:32:21.297 INFO  [28154] [OpEngine::propagate@138] ) propagator.launch 
+2019-07-24 12:32:21.297 INFO  [28154] [OpIndexer::indexSequenceCompute@218] OpIndexer::indexSequenceCompute
+2019-07-24 12:32:21.316 INFO  [28154] [OpEngine::propagate@141] ]
+2019-07-24 12:32:21.317 INFO  [28154] [OpEngine::downloadEvent@167] .
+2019-07-24 12:32:21.380 INFO  [28154] [OEvent::downloadHits@362]  nhit 53 --dbghit N hitmask 0x18a0 SC|SA|BT|TO BULK_SCATTER|SURFACE_ABSORB|BOUNDARY_TRANSMIT|TORCH
+2019-07-24 12:32:23.039 INFO  [28154] [CInputPhotonSource::GeneratePrimaryVertex@184]  num_photons 10000 gpv_count 0 event_gencode 4096 : TORCH
+2019-07-24 12:32:24.675 INFO  [28154] [CInputPhotonSource::GeneratePrimaryVertex@184]  num_photons 10000 gpv_count 1 event_gencode 4096 : TORCH
+2019-07-24 12:32:26.073 INFO  [28154] [CInputPhotonSource::GeneratePrimaryVertex@184]  num_photons 10000 gpv_count 2 event_gencode 4096 : TORCH
+2019-07-24 12:32:27.472 INFO  [28154] [CInputPhotonSource::GeneratePrimaryVertex@184]  num_photons 10000 gpv_count 3 event_gencode 4096 : TORCH
+2019-07-24 12:32:28.872 INFO  [28154] [CInputPhotonSource::GeneratePrimaryVertex@184]  num_photons 10000 gpv_count 4 event_gencode 4096 : TORCH
+2019-07-24 12:32:30.264 INFO  [28154] [CInputPhotonSource::GeneratePrimaryVertex@184]  num_photons 10000 gpv_count 5 event_gencode 4096 : TORCH
+2019-07-24 12:32:31.662 INFO  [28154] [CInputPhotonSource::GeneratePrimaryVertex@184]  num_photons 10000 gpv_count 6 event_gencode 4096 : TORCH
+2019-07-24 12:32:33.066 INFO  [28154] [CInputPhotonSource::GeneratePrimaryVertex@184]  num_photons 10000 gpv_count 7 event_gencode 4096 : TORCH
+2019-07-24 12:32:34.465 INFO  [28154] [CInputPhotonSource::GeneratePrimaryVertex@184]  num_photons 10000 gpv_count 8 event_gencode 4096 : TORCH
+2019-07-24 12:32:35.859 INFO  [28154] [CInputPhotonSource::GeneratePrimaryVertex@184]  num_photons 10000 gpv_count 9 event_gencode 4096 : TORCH
+2019-07-24 12:32:37.260 INFO  [28154] [CG4::postpropagate@369] [ (0) ctx CG4Ctx::desc_stats dump_count 0 event_total 10 event_track_count 10000
+2019-07-24 12:32:37.260 INFO  [28154] [OpticksEvent::postPropagateGeant4@2181] OpticksEvent::postPropagateGeant4 shape  genstep 1,6,4 nopstep 0,4,4 photon 100000,4,4 source 100000,4,4 record 100000,10,2,4 phosel 100000,1,4 recsel 100000,10,1,4 sequence 100000,1,2 seed 100000,1,1 hit 0,4,4 num_photons 100000 dynamic 0
+2019-07-24 12:32:37.260 INFO  [28154] [OpticksEvent::indexPhotonsCPU@2253] OpticksEvent::indexPhotonsCPU sequence 100000,1,2 phosel 100000,1,4 phosel.hasData 0 recsel0 100000,10,1,4 recsel0.hasData 0
+2019-07-24 12:32:37.261 INFO  [28154] [OpticksEvent::indexPhotonsCPU@2286] indexSequence START 
+2019-07-24 12:32:37.336 INFO  [28154] [OpticksEvent::indexPhotonsCPU@2288] indexSequence DONE 
+2019-07-24 12:32:37.369 INFO  [28154] [OpticksEvent::collectPhotonHitsCPU@2218] OpticksEvent::collectPhotonHitsCPU numHits 0
+2019-07-24 12:32:37.370 INFO  [28154] [CSteppingAction::report@216] CG4::postpropagate
+2019-07-24 12:32:37.370 INFO  [28154] [CRandomEngine::postpropagate@691]  jump_photons 0
+2019-07-24 12:32:37.370 INFO  [28154] [CG4::postpropagate@390] ] (0)
+2019-07-24 12:32:37.370 INFO  [28154] [OpticksEvent::saveHitData@1636] saveHitData zero hits 
+2019-07-24 12:32:37.448 INFO  [28154] [OpticksEvent::makeReport@1713] tagdir /tmp/opc/opticks/tboolean-box/evt/tboolean-box/torch/-1
+2019-07-24 12:32:37.540 INFO  [28154] [OpticksEvent::makeReport@1713] tagdir /tmp/opc/opticks/tboolean-box/evt/tboolean-box/torch/1
+2019-07-24 12:32:37.551 INFO  [28154] [GGeoTest::anaEvent@855]  dbgnode -1 numTrees 2 evt 0x7d5f710
+2019-07-24 12:32:37.551 INFO  [28154] [OpticksEvent::getTestConfig@700]  gtc autoseqmap=TO:0,SR:1,SA:0_name=tboolean-box_outerfirst=1_analytic=1_csgpath=/tmp/opc/opticks/tboolean-box_mode=PyCsgInBox_autoobject=Vacuum/perfectSpecularSurface//GlassSchottF2_autoemitconfig=photons:600000,wavelength:380,time:0.2,posdelta:0.1,sheetmask:0x1,umin:0.45,umax:0.55,vmin:0.45,vmax:0.55,diffuse:1,ctmindiffuse:0.5,ctmaxdiffuse:1.0_autocontainer=Rock//perfectAbsorbSurface/Vacuum
+2019-07-24 12:32:37.556 INFO  [28154] [OpticksEventInstrument::CreateRecordsNPY@36] OpticksEventInstrument::CreateRecordsNPY  shape 100000,10,2,4
+2019-07-24 12:32:37.556 INFO  [28154] [OpticksEventAna::initOverride@67]  autoseqmap TO:0,SR:1,SA:0
+2019-07-24 12:32:37.560 INFO  [28154] [OpticksEventAna::checkPointExcursions@108]  seqmap TO:0,SR:1,SA:0 seqmap_his              8ad seqmap_val              121
+2019-07-24 12:32:37.560 INFO  [28154] [OpticksEventAna::checkPointExcursions@157]  num_excursions 0
+2019-07-24 12:32:37.560 INFO  [28154] [OpticksEventAna::dump@232] GGeoTest::anaEvent OpticksEventAna pho 100000,4,4 seq 100000,1,2
+2019-07-24 12:32:37.560 INFO  [28154] [GGeoTest::anaEvent@855]  dbgnode -1 numTrees 2 evt 0x82b5bc0
+2019-07-24 12:32:37.561 INFO  [28154] [OpticksEvent::getTestConfig@700]  gtc autoseqmap=TO:0,SR:1,SA:0_name=tboolean-box_outerfirst=1_analytic=1_csgpath=/tmp/opc/opticks/tboolean-box_mode=PyCsgInBox_autoobject=Vacuum/perfectSpecularSurface//GlassSchottF2_autoemitconfig=photons:600000,wavelength:380,time:0.2,posdelta:0.1,sheetmask:0x1,umin:0.45,umax:0.55,vmin:0.45,vmax:0.55,diffuse:1,ctmindiffuse:0.5,ctmaxdiffuse:1.0_autocontainer=Rock//perfectAbsorbSurface/Vacuum
+2019-07-24 12:32:37.561 INFO  [28154] [OpticksEventInstrument::CreateRecordsNPY@36] OpticksEventInstrument::CreateRecordsNPY  shape 100000,10,2,4
+2019-07-24 12:32:37.561 INFO  [28154] [OpticksEventAna::initOverride@67]  autoseqmap TO:0,SR:1,SA:0
+2019-07-24 12:32:37.565 INFO  [28154] [OpticksEventAna::checkPointExcursions@108]  seqmap TO:0,SR:1,SA:0 seqmap_his              8ad seqmap_val              121
+2019-07-24 12:32:37.565 INFO  [28154] [OpticksEventAna::checkPointExcursions@157]  num_excursions 0
+2019-07-24 12:32:37.565 INFO  [28154] [OpticksEventAna::dump@232] GGeoTest::anaEvent OpticksEventAna pho 100000,4,4 seq 100000,1,2
+2019-07-24 12:32:37.565 INFO  [28154] [OpticksAna::run@73]  anakey tboolean enabled Y
+2019-07-24 12:32:37.565 INFO  [28154] [OpticksAna::run@82]  cmdline tboolean.py --tagoffset 0 --tag 1 --cat tboolean-box --pfx tboolean-box --src torch --show  
+2019-07-24 12:32:43.664 INFO  [28154] [SSys::run@72] tboolean.py --tagoffset 0 --tag 1 --cat tboolean-box --pfx tboolean-box --src torch --show   rc_raw : 256 rc : 1
+2019-07-24 12:32:43.665 ERROR [28154] [SSys::run@79] FAILED with  cmd tboolean.py --tagoffset 0 --tag 1 --cat tboolean-box --pfx tboolean-box --src torch --show   RC 1
+2019-07-24 12:32:43.665 INFO  [28154] [OpticksAna::run@94]  anakey tboolean cmdline tboolean.py --tagoffset 0 --tag 1 --cat tboolean-box --pfx tboolean-box --src torch --show   interactivity 0 rc 1 rcmsg OpticksAna::run non-zero RC from ana script
+2019-07-24 12:32:43.665 FATAL [28154] [Opticks::dumpRC@204]  rc 1 rcmsg : OpticksAna::run non-zero RC from ana script
+2019-07-24 12:32:43.671 INFO  [28154] [OpticksProfile::dump@372] Opticks::postpropagate dir /tmp/opc/opticks/tboolean-box/evt/tboolean-box/torch name OpticksProfile.npy num_stamp 157
+2019-07-24 12:32:43.672 INFO  [28154] [BTimesTable::dump@154] Opticks::postpropagate startswith filter: NONE spacewith _OpticksRun::createEvent tcut -1 nline 157
+2019-07-24 12:32:43.673 INFO  [28154] [OpticksProfile::dump@378]  npy 157,4 /tmp/opc/opticks/tboolean-box/evt/tboolean-box/torch/OpticksProfile.npy
+2019-07-24 12:32:43.673 INFO  [28154] [OpticksProfile::accumulateDump@265] Opticks::postpropagate nacc 1
+2019-07-24 12:32:43.673 INFO  [28154] [OpticksProfile::dump@372] Opticks::postpropagate dir /tmp/opc/opticks/tboolean-box/evt/tboolean-box/torch name OpticksProfile.npy num_stamp 157
+2019-07-24 12:32:43.674 INFO  [28154] [BTimesTable::dump@154] Opticks::postpropagate startswith filter: OPropagator::launch spacewith - tcut 0 nline 157
+2019-07-24 12:32:43.674 INFO  [28154] [OpticksProfile::dump@378]  npy 157,4 /tmp/opc/opticks/tboolean-box/evt/tboolean-box/torch/OpticksProfile.npy
+2019-07-24 12:32:43.674 INFO  [28154] [OpticksProfile::accumulateDump@265] Opticks::postpropagate nacc 1
+2019-07-24 12:32:43.674 INFO  [28154] [OpticksProfile::dump@372] Opticks::postpropagate dir /tmp/opc/opticks/tboolean-box/evt/tboolean-box/torch name OpticksProfile.npy num_stamp 157
+2019-07-24 12:32:43.674 INFO  [28154] [BTimesTable::dump@154] Opticks::postpropagate startswith filter: CG4::propagate spacewith - tcut 0 nline 157
+2019-07-24 12:32:43.674 INFO  [28154] [OpticksProfile::dump@378]  npy 157,4 /tmp/opc/opticks/tboolean-box/evt/tboolean-box/torch/OpticksProfile.npy
+2019-07-24 12:32:43.674 INFO  [28154] [OpticksProfile::accumulateDump@265] Opticks::postpropagate nacc 1
+2019-07-24 12:32:43.674 INFO  [28154] [NMeta::dump@129] Opticks::postpropagate
+2019-07-24 12:32:43.675 INFO  [28154] [Opticks::saveParameters@1025]  postpropagate save parameters.json into TagZeroDir /tmp/opc/opticks/tboolean-box/evt/tboolean-box/torch/0
+2019-07-24 12:32:43.675 FATAL [28154] [Opticks::dumpRC@204]  rc 1 rcmsg : OpticksAna::run non-zero RC from ana script
+2019-07-24 12:32:43.675 INFO  [28154] [main@13]  RC 1
+2019-07-24 12:32:44.183 INFO  [28154] [OContext::cleanUpCache@479]  RemoveDir /var/tmp/OptixCache
+2019-07-24 12:32:44.183 INFO  [28154] [CG4::cleanup@397] [
+2019-07-24 12:32:44.183 INFO  [28154] [CG4::cleanup@399] ]
