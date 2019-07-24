@@ -1,0 +1,544 @@
+[opc@bristollz ~]$ ts box -D
+====== /home/opc/opticks/bin/tboolean.sh -D ====== PWD /home/opc =================
+tboolean-lv -D
+=== tboolean-lv : tboolean-box
+[2019-07-24 12:32:02,812] p28093 {Serialize           :csg.py    :440} INFO     - CSG.Serialize : writing 2 trees to directory /tmp/opc/opticks/tboolean-box 
+[2019-07-24 12:32:02,813] p28093 {save                :csg.py    :794} INFO     -  soIdx 0 lvIdx 0 height 0 
+[2019-07-24 12:32:02,815] p28093 {save                :csg.py    :816} INFO     - save to idxpath /tmp/opc/opticks/tboolean-box/0/srcidx.npy 
+[2019-07-24 12:32:02,815] p28093 {save                :csg.py    :785} WARNING  - basename of treedir 1 does not match the lvIdx 0 
+[2019-07-24 12:32:02,816] p28093 {save                :csg.py    :794} INFO     -  soIdx 0 lvIdx 0 height 0 
+[2019-07-24 12:32:02,817] p28093 {save                :csg.py    :816} INFO     - save to idxpath /tmp/opc/opticks/tboolean-box/1/srcidx.npy 
+autoseqmap=TO:0,SR:1,SA:0_name=tboolean-box_outerfirst=1_analytic=1_csgpath=/tmp/opc/opticks/tboolean-box_mode=PyCsgInBox_autoobject=Vacuum/perfectSpecularSurface//GlassSchottF2_autoemitconfig=photons:600000,wavelength:380,time:0.2,posdelta:0.1,sheetmask:0x1,umin:0.45,umax:0.55,vmin:0.45,vmax:0.55,diffuse:1,ctmindiffuse:0.5,ctmaxdiffuse:1.0_autocontainer=Rock//perfectAbsorbSurface/Vacuum
+=== tboolean-box : testconfig autoseqmap=TO:0,SR:1,SA:0_name=tboolean-box_outerfirst=1_analytic=1_csgpath=/tmp/opc/opticks/tboolean-box_mode=PyCsgInBox_autoobject=Vacuum/perfectSpecularSurface//GlassSchottF2_autoemitconfig=photons:600000,wavelength:380,time:0.2,posdelta:0.1,sheetmask:0x1,umin:0.45,umax:0.55,vmin:0.45,vmax:0.55,diffuse:1,ctmindiffuse:0.5,ctmaxdiffuse:1.0_autocontainer=Rock//perfectAbsorbSurface/Vacuum
+
+tboolean-info
+==================
+
+
+BASH_VERSION         : 4.2.46(2)-release
+TESTNAME             : tboolean-box
+TESTCONFIG           : autoseqmap=TO:0,SR:1,SA:0_name=tboolean-box_outerfirst=1_analytic=1_csgpath=/tmp/opc/opticks/tboolean-box_mode=PyCsgInBox_autoobject=Vacuum/perfectSpecularSurface//GlassSchottF2_autoemitconfig=photons:600000,wavelength:380,time:0.2,posdelta:0.1,sheetmask:0x1,umin:0.45,umax:0.55,vmin:0.45,vmax:0.55,diffuse:1,ctmindiffuse:0.5,ctmaxdiffuse:1.0_autocontainer=Rock//perfectAbsorbSurface/Vacuum
+TORCHCONFIG          : 
+
+tboolean-testname    : tboolean-box
+tboolean-testconfig  : autoseqmap=TO:0,SR:1,SA:0_name=tboolean-box_outerfirst=1_analytic=1_csgpath=/tmp/opc/opticks/tboolean-box_mode=PyCsgInBox_autoobject=Vacuum/perfectSpecularSurface//GlassSchottF2_autoemitconfig=photons:600000,wavelength:380,time:0.2,posdelta:0.1,sheetmask:0x1,umin:0.45,umax:0.55,vmin:0.45,vmax:0.55,diffuse:1,ctmindiffuse:0.5,ctmaxdiffuse:1.0_autocontainer=Rock//perfectAbsorbSurface/Vacuum
+tboolean-torchconfig : type=disc_photons=100000_mode=fixpol_polarization=1,1,0_frame=-1_transform=1.000,0.000,0.000,0.000,0.000,1.000,0.000,0.000,0.000,0.000,1.000,0.000,0.000,0.000,0.000,1.000_source=0,0,599_target=0,0,0_time=0.1_radius=300_distance=200_zenithazimuth=0,1,0,1_material=Vacuum_wavelength=500
+
+
+=== o-cmdline-binary-match : --okg4
+=== o-gdb-update : placeholder
+=== o-main : gdb --args /home/opc/opticks/lib/OKG4Test --okg4 --align --dbgskipclearzero --dbgnojumpzero --dbgkludgeflatzero -D --envkey --rendermode +global,+axis --geocenter --stack 2180 --eye 1,0,0 --up 0,0,1 --test --testconfig autoseqmap=TO:0,SR:1,SA:0_name=tboolean-box_outerfirst=1_analytic=1_csgpath=/tmp/opc/opticks/tboolean-box_mode=PyCsgInBox_autoobject=Vacuum/perfectSpecularSurface//GlassSchottF2_autoemitconfig=photons:600000,wavelength:380,time:0.2,posdelta:0.1,sheetmask:0x1,umin:0.45,umax:0.55,vmin:0.45,vmax:0.55,diffuse:1,ctmindiffuse:0.5,ctmaxdiffuse:1.0_autocontainer=Rock//perfectAbsorbSurface/Vacuum --torch --torchconfig type=disc_photons=100000_mode=fixpol_polarization=1,1,0_frame=-1_transform=1.000,0.000,0.000,0.000,0.000,1.000,0.000,0.000,0.000,0.000,1.000,0.000,0.000,0.000,0.000,1.000_source=0,0,599_target=0,0,0_time=0.1_radius=300_distance=200_zenithazimuth=0,1,0,1_material=Vacuum_wavelength=500 --torchdbg --tag 1 --anakey tboolean --args --save ======= PWD /home/opc Wed 24 Jul 12:32:03 GMT 2019
+GNU gdb (GDB) Red Hat Enterprise Linux 7.6.1-114.el7
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-redhat-linux-gnu".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from /home/opc/opticks/lib/OKG4Test...done.
+(gdb) r
+Starting program: /home/opc/opticks/lib/OKG4Test --okg4 --align --dbgskipclearzero --dbgnojumpzero --dbgkludgeflatzero -D --envkey --rendermode +global,+axis --geocenter --stack 2180 --eye 1,0,0 --up 0,0,1 --test --testconfig autoseqmap=TO:0,SR:1,SA:0_name=tboolean-box_outerfirst=1_analytic=1_csgpath=/tmp/opc/opticks/tboolean-box_mode=PyCsgInBox_autoobject=Vacuum/perfectSpecularSurface//GlassSchottF2_autoemitconfig=photons:600000,wavelength:380,time:0.2,posdelta:0.1,sheetmask:0x1,umin:0.45,umax:0.55,vmin:0.45,vmax:0.55,diffuse:1,ctmindiffuse:0.5,ctmaxdiffuse:1.0_autocontainer=Rock//perfectAbsorbSurface/Vacuum --torch --torchconfig type=disc_photons=100000_mode=fixpol_polarization=1,1,0_frame=-1_transform=1.000,0.000,0.000,0.000,0.000,1.000,0.000,0.000,0.000,0.000,1.000,0.000,0.000,0.000,0.000,1.000_source=0,0,599_target=0,0,0_time=0.1_radius=300_distance=200_zenithazimuth=0,1,0,1_material=Vacuum_wavelength=500 --torchdbg --tag 1 --anakey tboolean --args --save
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+PLOG::EnvLevel adjusting loglevel by envvar   key NCSGList level ERROR fallback DEBUG
+PLOG::EnvLevel adjusting loglevel by envvar   key GGeoTest level ERROR fallback DEBUG
+PLOG::EnvLevel adjusting loglevel by envvar   key CTestDetector level ERROR fallback DEBUG
+/home/opc/opticks/lib/OKG4Test --okg4 --align --dbgskipclearzero --dbgnojumpzero --dbgkludgeflatzero -D --envkey --rendermode +global,+axis --geocenter --stack 2180 --eye 1,0,0 --up 0,0,1 --test --testconfig autoseqmap=TO:0,SR:1,SA:0_name=tboolean-box_outerfirst=1_analytic=1_csgpath=/tmp/opc/opticks/tboolean-box_mode=PyCsgInBox_autoobject=Vacuum/perfectSpecularSurface//GlassSchottF2_autoemitconfig=photons:600000,wavelength:380,time:0.2,posdelta:0.1,sheetmask:0x1,umin:0.45,umax:0.55,vmin:0.45,vmax:0.55,diffuse:1,ctmindiffuse:0.5,ctmaxdiffuse:1.0_autocontainer=Rock//perfectAbsorbSurface/Vacuum --torch --torchconfig type=disc_photons=100000_mode=fixpol_polarization=1,1,0_frame=-1_transform=1.000,0.000,0.000,0.000,0.000,1.000,0.000,0.000,0.000,0.000,1.000,0.000,0.000,0.000,0.000,1.000_source=0,0,599_target=0,0,0_time=0.1_radius=300_distance=200_zenithazimuth=0,1,0,1_material=Vacuum_wavelength=500 --torchdbg --tag 1 --anakey tboolean --args --save 
+2019-07-24 12:32:16.145 INFO  [28154] [Opticks::init@320] COMPUTE_MODE forced_compute 
+2019-07-24 12:32:16.157 INFO  [28154] [BOpticksResource::setupViaKey@531] 
+             BOpticksKey  :  
+      spec (OPTICKS_KEY)  : OKX4Test.X4PhysicalVolume.lWorld0x4bc2710_PV.f6cc352e44243f8fa536ab483ad390ce
+                 exename  : OKX4Test
+         current_exename  : OKG4Test
+                   class  : X4PhysicalVolume
+                 volname  : lWorld0x4bc2710_PV
+                  digest  : f6cc352e44243f8fa536ab483ad390ce
+                  idname  : OKX4Test_lWorld0x4bc2710_PV_g4live
+                  idfile  : g4ok.gltf
+                  idgdml  : g4ok.gdml
+                  layout  : 1
+
+2019-07-24 12:32:16.158 INFO  [28154] [Opticks::initResource@676]  (direct mode) NOT setting IDPATH envvar  [/home/opc/opticks/geocache/OKX4Test_lWorld0x4bc2710_PV_g4live/g4ok_gltf/f6cc352e44243f8fa536ab483ad390ce/1]
+2019-07-24 12:32:16.158 INFO  [28154] [Opticks::loadOriginCacheMeta@1656]  cachemetapath /home/opc/opticks/geocache/OKX4Test_lWorld0x4bc2710_PV_g4live/g4ok_gltf/f6cc352e44243f8fa536ab483ad390ce/1/cachemeta.json
+2019-07-24 12:32:16.158 INFO  [28154] [NMeta::dump@129] Opticks::loadOriginCacheMeta
+{
+    "argline": "/home/opc/opticks/lib/OKX4Test --okx4 --g4codegen --deletegeocache --gdmlpath /home/opc/opticks/opticksdata/export/juno1808/g4_00_v5.gdml --csgskiplv 22 --runfolder geocache-j1808-v5 --runcomment fix-lv10-coincidence-speckle ",
+    "location": "Opticks::updateCacheMeta",
+    "runcomment": "fix-lv10-coincidence-speckle",
+    "rundate": "20190724_115635",
+    "runfolder": "geocache-j1808-v5",
+    "runlabel": "R0_cvd_",
+    "runstamp": 1563969395
+}
+2019-07-24 12:32:16.158 INFO  [28154] [Opticks::ExtractCacheMetaGDMLPath@1676]  argline /home/opc/opticks/lib/OKX4Test --okx4 --g4codegen --deletegeocache --gdmlpath /home/opc/opticks/opticksdata/export/juno1808/g4_00_v5.gdml --csgskiplv 22 --runfolder geocache-j1808-v5 --runcomment fix-lv10-coincidence-speckle 
+2019-07-24 12:32:16.158 INFO  [28154] [Opticks::ExtractCacheMetaGDMLPath@1679]  gdmlpath /home/opc/opticks/opticksdata/export/juno1808/g4_00_v5.gdml
+2019-07-24 12:32:16.158 INFO  [28154] [Opticks::loadOriginCacheMeta@1660]  gdmlpath /home/opc/opticks/opticksdata/export/juno1808/g4_00_v5.gdml
+2019-07-24 12:32:16.158 WARN  [28154] [OpticksHub::configure@313] OpticksHub::configure FORCED COMPUTE MODE : as remote session detected 
+2019-07-24 12:32:16.159 INFO  [28154] [OpticksHub::loadGeometry@502] [ /home/opc/opticks/geocache/OKX4Test_lWorld0x4bc2710_PV_g4live/g4ok_gltf/f6cc352e44243f8fa536ab483ad390ce/1
+2019-07-24 12:32:16.159 ERROR [28154] [GGeo::init@429]  idpath /home/opc/opticks/geocache/OKX4Test_lWorld0x4bc2710_PV_g4live/g4ok_gltf/f6cc352e44243f8fa536ab483ad390ce/1 cache_exists 1 cache_requested 1 m_loaded_from_cache 1 m_live 0 will_load_libs 1
+2019-07-24 12:32:16.697 INFO  [28154] [NMeta::dump@129] GGeo::loadCacheMeta
+{
+    "argline": "/home/opc/opticks/lib/OKX4Test --okx4 --g4codegen --deletegeocache --gdmlpath /home/opc/opticks/opticksdata/export/juno1808/g4_00_v5.gdml --csgskiplv 22 --runfolder geocache-j1808-v5 --runcomment fix-lv10-coincidence-speckle ",
+    "location": "Opticks::updateCacheMeta",
+    "runcomment": "fix-lv10-coincidence-speckle",
+    "rundate": "20190724_115635",
+    "runfolder": "geocache-j1808-v5",
+    "runlabel": "R0_cvd_",
+    "runstamp": 1563969395
+}
+2019-07-24 12:32:16.697 INFO  [28154] [NMeta::dump@129] GGeo::loadCacheMeta.lv2sd
+2019-07-24 12:32:16.697 INFO  [28154] [Opticks::ExtractCacheMetaGDMLPath@1676]  argline /home/opc/opticks/lib/OKX4Test --okx4 --g4codegen --deletegeocache --gdmlpath /home/opc/opticks/opticksdata/export/juno1808/g4_00_v5.gdml --csgskiplv 22 --runfolder geocache-j1808-v5 --runcomment fix-lv10-coincidence-speckle 
+2019-07-24 12:32:16.697 INFO  [28154] [Opticks::ExtractCacheMetaGDMLPath@1679]  gdmlpath /home/opc/opticks/opticksdata/export/juno1808/g4_00_v5.gdml
+2019-07-24 12:32:16.697 FATAL [28154] [GGeo::loadCacheMeta@809]  origin_gdmlpath /home/opc/opticks/opticksdata/export/juno1808/g4_00_v5.gdml
+2019-07-24 12:32:16.712 INFO  [28154] [OpticksHub::loadGeometry@520] --test modifying geometry
+2019-07-24 12:32:16.713 ERROR [28154] [NCSGList::load@230]  VERBOSITY 0 basedir /tmp/opc/opticks/tboolean-box txtpath /tmp/opc/opticks/tboolean-box/csg.txt nbnd 2
+2019-07-24 12:32:16.714 ERROR [28154] [NCSGList::add@121]  add tree, boundary: Rock//perfectAbsorbSurface/Vacuum
+2019-07-24 12:32:16.716 ERROR [28154] [NCSGList::add@121]  add tree, boundary: Vacuum///GlassSchottF2
+2019-07-24 12:32:16.716 ERROR [28154] [GGeoTest::checkPts@185]  proxy 0 proxy_idx -1
+2019-07-24 12:32:16.716 ERROR [28154] [GGeoTest::checkPts@191]  basegeolib  nmm 6
+2019-07-24 12:32:16.716 ERROR [28154] [GGeoTest::checkPts@201]   0  GPts.NumPt 201 lvIdx ( 39 12 11 3 0 1 2 10 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 9 8 8 38 37 36 35 34 14 13 31 28 29 30 33 32)
+2019-07-24 12:32:16.716 ERROR [28154] [GGeoTest::checkPts@201]   1  GPts.NumPt 5 lvIdx ( 27 25 23 24 26)
+2019-07-24 12:32:16.716 ERROR [28154] [GGeoTest::checkPts@201]   2  GPts.NumPt 5 lvIdx ( 17 21 20 18 19)
+2019-07-24 12:32:16.716 ERROR [28154] [GGeoTest::checkPts@201]   3  GPts.NumPt 130 lvIdx ( 7 6 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4 5 4)
+2019-07-24 12:32:16.716 ERROR [28154] [GGeoTest::checkPts@201]   4  GPts.NumPt 1 lvIdx ( 15)
+2019-07-24 12:32:16.716 ERROR [28154] [GGeoTest::checkPts@201]   5  GPts.NumPt 1 lvIdx ( 16)
+2019-07-24 12:32:16.716 ERROR [28154] [GGeoTest::init@140] [
+2019-07-24 12:32:16.716 ERROR [28154] [GGeoTest::initCreateCSG@230]  m_csgpath /tmp/opc/opticks/tboolean-box
+2019-07-24 12:32:16.716 ERROR [28154] [GGeoTest::importCSG@322] [
+2019-07-24 12:32:16.717 ERROR [28154] [GGeoTest::prepareMeshes@384] [
+2019-07-24 12:32:16.751 ERROR [28154] [GGeoTest::prepareMeshes@405] ] csgpath /tmp/opc/opticks/tboolean-box m_numtree 2 verbosity 0
+2019-07-24 12:32:16.751 ERROR [28154] [GGeoTest::adjustContainer@510]  containerautosize ENABLED by metadata on container CSG 1
+2019-07-24 12:32:16.751 ERROR [28154] [GGeoTest::adjustContainer@519]  m_numtree 2
+2019-07-24 12:32:16.751 ERROR [28154] [NCSGList::updateBoundingBox@166] [ m_bbox  mi (      0.000     0.000     0.000) mx (      0.000     0.000     0.000) si (      0.000     0.000     0.000) EMPTY
+2019-07-24 12:32:16.751 ERROR [28154] [NCSGList::updateBoundingBox@179]  bba  mi (   -150.000  -150.000  -100.000) mx (    150.000   150.000   100.000) si (    300.000   300.000   200.000)
+2019-07-24 12:32:16.751 ERROR [28154] [NCSGList::updateBoundingBox@183] ] m_bbox  mi (   -150.000  -150.000  -100.000) mx (    150.000   150.000   100.000) si (    300.000   300.000   200.000)
+2019-07-24 12:32:16.751 ERROR [28154] [NCSGList::adjustContainerSize@188] [
+2019-07-24 12:32:16.751 ERROR [28154] [NCSGList::adjustContainerSize@204] ] m_bbox  mi (   -450.000  -450.000  -450.000) mx (    450.000   450.000   450.000) si (    900.000   900.000   900.000)
+2019-07-24 12:32:16.751 ERROR [28154] [GGeoTest::adjustContainer@533]  container_index 0 container_bba  mi (   -450.000  -450.000  -450.000) mx (    450.000   450.000   450.000) si (    900.000   900.000   900.000)
+2019-07-24 12:32:16.752 ERROR [28154] [GGeoTest::importCSG@367] ]
+2019-07-24 12:32:16.759 ERROR [28154] [GGeoTest::initCreateCSG@290]  tmm.ce 0.0000,0.0000,0.0000,450.0000
+2019-07-24 12:32:16.759 ERROR [28154] [GGeoTest::init@168] ]
+2019-07-24 12:32:16.759 ERROR [28154] [Opticks::setupTimeDomain@2230]  animtimerange -1.0000,-1.0000,0.0000,0.0000
+2019-07-24 12:32:16.759 INFO  [28154] [Opticks::setupTimeDomain@2241]  cfg.getTimeMaxThumb [--timemaxthumb] 6 cfg.getAnimTimeMax [--animtimemax] -1 cfg.getAnimTimeMax [--animtimemax] -1 speed_of_light (mm/ns) 300 extent (mm) 450 rule_of_thumb_timemax (ns) 9 u_timemax 9 u_animtimemax 9
+2019-07-24 12:32:16.761 INFO  [28154] [OpticksHub::loadGeometry@546] ]
+2019-07-24 12:32:16.769 ERROR [28154] [nnode::generateParPoints@1797]  sheetmask 1
+2019-07-24 12:32:16.769 ERROR [28154] [nnode::selectSheets@1786]  nsa 6 sheetmask 1 ns 1
+2019-07-24 12:32:16.769 INFO  [28154] [nnode::generateParPointsSheet@1821]  sheet 0 num 100000
+[New Thread 0x7fffddb54700 (LWP 28163)]
+[New Thread 0x7fffd3dc6700 (LWP 28164)]
+
+        ############################################
+        !!! WARNING - FPE detection is activated !!!
+        ############################################
+
+**************************************************************
+ Geant4 version Name: geant4-10-04-patch-02    (25-May-2018)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+HepRandomEngine::put called -- no effect!
+2019-07-24 12:32:17.759 ERROR [28154] [CTestDetector::init@70] [
+2019-07-24 12:32:17.759 ERROR [28154] [CTestDetector::makeDetector_NCSG@238]  numVolumes 2
+2019-07-24 12:32:17.759 ERROR [28154] [NCSGList::createUniverse@316]  bnd0 Rock//perfectAbsorbSurface/Vacuum ubnd Rock///Rock scale 1 delta 1
+2019-07-24 12:32:17.759 ERROR [28154] [NCSGList::createUniverse@323]  m_bbox  mi (   -450.000  -450.000  -450.000) mx (    450.000   450.000   450.000) si (    900.000   900.000   900.000)
+2019-07-24 12:32:17.760 ERROR [28154] [NCSGList::createUniverse@334]  universe.get_root_csgname box
+2019-07-24 12:32:17.764 ERROR [28154] [CTestDetector::makeChildVolume@157]  lvn UNIVERSE_LV
+2019-07-24 12:32:17.764 ERROR [28154] [CTestDetector::makeChildVolume@184]  csg.has_root_transform Id
+2019-07-24 12:32:17.765 ERROR [28154] [CTestDetector::makeChildVolume@200]  csg.spec Rock///Rock csg.getRootCSGName box boundary 2 mother - lv UNIVERSE_LV pv UNIVERSE_PV mat Rock
+2019-07-24 12:32:17.765 ERROR [28154] [CTestDetector::makeDetector_NCSG@267]    0 spec Rock//perfectAbsorbSurface/Vacuum
+2019-07-24 12:32:17.765 ERROR [28154] [CTestDetector::makeChildVolume@157]  lvn box_lv0_
+2019-07-24 12:32:17.765 ERROR [28154] [CTestDetector::makeChildVolume@184]  csg.has_root_transform Id
+2019-07-24 12:32:17.765 ERROR [28154] [CTestDetector::makeChildVolume@200]  csg.spec Rock//perfectAbsorbSurface/Vacuum csg.getRootCSGName box boundary 0 mother UNIVERSE_LV lv box_lv0_ pv box_pv0_ mat Vacuum
+2019-07-24 12:32:17.765 ERROR [28154] [CTestDetector::makeDetector_NCSG@267]    1 spec Vacuum///GlassSchottF2
+2019-07-24 12:32:17.766 ERROR [28154] [CTestDetector::makeChildVolume@157]  lvn box3_lv1_
+2019-07-24 12:32:17.766 ERROR [28154] [CTestDetector::makeChildVolume@184]  csg.has_root_transform Id
+2019-07-24 12:32:17.766 ERROR [28154] [CTestDetector::makeChildVolume@200]  csg.spec Vacuum///GlassSchottF2 csg.getRootCSGName box3 boundary 1 mother box_lv0_ lv box3_lv1_ pv box3_pv1_ mat GlassSchottF2
+2019-07-24 12:32:17.766 ERROR [28154] [CDetector::hookupSD@131]  NOT INVOKING SetSensitiveDetector ON ANY VOLUMES AS nlvsd is zero or m_sd NULL  nlvsd 0 m_sd 0x78317b0 sdname SD0
+2019-07-24 12:32:17.766 ERROR [28154] [CTestDetector::init@87] ]
+2019-07-24 12:32:17.766 FATAL [28154] [Opticks::setSpaceDomain@2181]  changing w 450 -> 451
+2019-07-24 12:32:17.766 ERROR [28154] [Opticks::setupTimeDomain@2230]  animtimerange -1.0000,-1.0000,0.0000,0.0000
+2019-07-24 12:32:17.766 INFO  [28154] [Opticks::setupTimeDomain@2241]  cfg.getTimeMaxThumb [--timemaxthumb] 6 cfg.getAnimTimeMax [--animtimemax] -1 cfg.getAnimTimeMax [--animtimemax] -1 speed_of_light (mm/ns) 300 extent (mm) 451 rule_of_thumb_timemax (ns) 9.02 u_timemax 9.02 u_animtimemax 9.02
+    0               perfectAbsorbSurface               perfectAbsorbSurface pv1 box_pv0_ #0 pv2 UNIVERSE_PV #0
+2019-07-24 12:32:17.846 INFO  [28154] [OContext::InitRTX@250]  --rtx 0 setting  OFF
+2019-07-24 12:32:17.847 INFO  [28154] [OContext::CheckDevices@185] 
+Device 0           Tesla P100-SXM2-16GB ordinal 0 Compute Support: 6 0 Total Memory: 17071734784
+
+[New Thread 0x7fffbd9b5700 (LWP 28165)]
+[New Thread 0x7fffbd1b4700 (LWP 28166)]
+[New Thread 0x7fffbc9b3700 (LWP 28167)]
+[New Thread 0x7fff89fa7700 (LWP 28168)]
+[New Thread 0x7fff897a6700 (LWP 28169)]
+[New Thread 0x7fff88fa5700 (LWP 28170)]
+[New Thread 0x7fff73fff700 (LWP 28171)]
+[New Thread 0x7fff737fe700 (LWP 28172)]
+[New Thread 0x7fff72ffd700 (LWP 28173)]
+[New Thread 0x7fff727fc700 (LWP 28174)]
+[New Thread 0x7fff71ffb700 (LWP 28175)]
+[New Thread 0x7fff717fa700 (LWP 28176)]
+[New Thread 0x7fff70ff9700 (LWP 28177)]
+[New Thread 0x7fff4ffff700 (LWP 28178)]
+[New Thread 0x7fff4f7fe700 (LWP 28179)]
+[New Thread 0x7fff4effd700 (LWP 28180)]
+[New Thread 0x7fff4e7fc700 (LWP 28181)]
+[New Thread 0x7fff4dffb700 (LWP 28182)]
+[New Thread 0x7fff4d7fa700 (LWP 28183)]
+[New Thread 0x7fff4cff9700 (LWP 28184)]
+[New Thread 0x7fff2ffff700 (LWP 28185)]
+[New Thread 0x7fff27fff700 (LWP 28186)]
+[New Thread 0x7fff2f7fe700 (LWP 28187)]
+[New Thread 0x7fff2effd700 (LWP 28188)]
+2019-07-24 12:32:18.373 INFO  [28154] [OScene::init@100] [
+2019-07-24 12:32:18.375 INFO  [28154] [OGeo::init@193] OGeo  top Sbvh ggg Sbvh assembly Sbvh instance Sbvh
+2019-07-24 12:32:18.375 INFO  [28154] [GGeoLib::dump@347] OGeo::convert GGeoLib ANALYTIC  numMergedMesh 1 ptr 0x5b2ad50
+mm index   0 geocode   A                  numVolumes          2 numFaces        4408 numITransforms           2 numITransforms*numVolumes           4 GParts Y GPts Y
+ num_total_volumes 2 num_instanced_volumes 0 num_global_volumes 2
+   0 pts Y  GPts.NumPt 2 lvIdx ( 0 1)
+2019-07-24 12:32:18.375 INFO  [28154] [OGeo::convert@219] [ nmm 1
+2019-07-24 12:32:18.760 INFO  [28154] [OGeo::convert@232] ] nmm 1
+2019-07-24 12:32:18.761 INFO  [28154] [OScene::init@163] ]
+2019-07-24 12:32:19.844 INFO  [28154] [OpEngine::uploadEvent@117] .
+2019-07-24 12:32:19.844 INFO  [28154] [OContext::createBuffer@817]               source          100000,4,4 mode : COMPUTE  BufferControl : source : OPTIX_INPUT_ONLY UPLOAD_WITH_CUDA BUFFER_COPY_ON_DIRTY COMPUTE_MODE VERBOSE_MODE 
+2019-07-24 12:32:19.845 INFO  [28154] [OContext::upload@693] UPLOAD_WITH_CUDA markDirty (100000,4,4)  NumBytes(0) 6400000 NumBytes(1) 64 NumValues(0) 1600000 NumValues(1) 16{}
+2019-07-24 12:32:19.846 INFO  [28154] [OContext::upload@699] UPLOAD_WITH_CUDA markDirty DONE (100000,4,4)  NumBytes(0) 6400000 NumBytes(1) 64 NumValues(0) 1600000 NumValues(1) 16{}
+2019-07-24 12:32:19.847 INFO  [28154] [OpEngine::propagate@126] [
+2019-07-24 12:32:19.847 INFO  [28154] [OpSeeder::seedPhotonsFromGenstepsViaOptiX@154] SEEDING TO SEED BUF  
+2019-07-24 12:32:19.847 INFO  [28154] [OEvent::markDirty@201] OEvent::markDirty(source) PROCEED
+2019-07-24 12:32:19.847 INFO  [28154] [OpEngine::propagate@136] ( propagator.launch 
+2019-07-24 12:32:21.284 INFO  [28154] [OPropagator::prelaunch@164] 1 : (0;100000,1) 
+2019-07-24 12:32:21.284 INFO  [28154] [BTimes::dump@158] OPropagator::prelaunch
+              validate000                  4.3e-05
+               compile000                    8e-06
+             prelaunch000                  1.20074
+2019-07-24 12:32:21.284 INFO  [28154] [OPropagator::launch@193] LAUNCH NOW -
+2019-07-24 12:32:21.297 INFO  [28154] [OPropagator::launch@199] LAUNCH DONE
+2019-07-24 12:32:21.297 INFO  [28154] [OPropagator::launch@201] 1 : (0;100000,1) 
+2019-07-24 12:32:21.297 INFO  [28154] [BTimes::dump@158] OPropagator::launch
+                launch001                 0.012317
+2019-07-24 12:32:21.297 INFO  [28154] [OpEngine::propagate@138] ) propagator.launch 
+2019-07-24 12:32:21.297 INFO  [28154] [OpIndexer::indexSequenceCompute@218] OpIndexer::indexSequenceCompute
+2019-07-24 12:32:21.316 INFO  [28154] [OpEngine::propagate@141] ]
+2019-07-24 12:32:21.317 INFO  [28154] [OpEngine::downloadEvent@167] .
+2019-07-24 12:32:21.380 INFO  [28154] [OEvent::downloadHits@362]  nhit 53 --dbghit N hitmask 0x18a0 SC|SA|BT|TO BULK_SCATTER|SURFACE_ABSORB|BOUNDARY_TRANSMIT|TORCH
+HepRandomEngine::put called -- no effect!
+2019-07-24 12:32:23.039 INFO  [28154] [CInputPhotonSource::GeneratePrimaryVertex@184]  num_photons 10000 gpv_count 0 event_gencode 4096 : TORCH
+2019-07-24 12:32:24.675 INFO  [28154] [CInputPhotonSource::GeneratePrimaryVertex@184]  num_photons 10000 gpv_count 1 event_gencode 4096 : TORCH
+2019-07-24 12:32:26.073 INFO  [28154] [CInputPhotonSource::GeneratePrimaryVertex@184]  num_photons 10000 gpv_count 2 event_gencode 4096 : TORCH
+2019-07-24 12:32:27.472 INFO  [28154] [CInputPhotonSource::GeneratePrimaryVertex@184]  num_photons 10000 gpv_count 3 event_gencode 4096 : TORCH
+2019-07-24 12:32:28.872 INFO  [28154] [CInputPhotonSource::GeneratePrimaryVertex@184]  num_photons 10000 gpv_count 4 event_gencode 4096 : TORCH
+2019-07-24 12:32:30.264 INFO  [28154] [CInputPhotonSource::GeneratePrimaryVertex@184]  num_photons 10000 gpv_count 5 event_gencode 4096 : TORCH
+2019-07-24 12:32:31.662 INFO  [28154] [CInputPhotonSource::GeneratePrimaryVertex@184]  num_photons 10000 gpv_count 6 event_gencode 4096 : TORCH
+2019-07-24 12:32:33.066 INFO  [28154] [CInputPhotonSource::GeneratePrimaryVertex@184]  num_photons 10000 gpv_count 7 event_gencode 4096 : TORCH
+2019-07-24 12:32:34.465 INFO  [28154] [CInputPhotonSource::GeneratePrimaryVertex@184]  num_photons 10000 gpv_count 8 event_gencode 4096 : TORCH
+2019-07-24 12:32:35.859 INFO  [28154] [CInputPhotonSource::GeneratePrimaryVertex@184]  num_photons 10000 gpv_count 9 event_gencode 4096 : TORCH
+2019-07-24 12:32:37.260 INFO  [28154] [CG4::postpropagate@369] [ (0) ctx CG4Ctx::desc_stats dump_count 0 event_total 10 event_track_count 10000
+2019-07-24 12:32:37.260 INFO  [28154] [OpticksEvent::postPropagateGeant4@2181] OpticksEvent::postPropagateGeant4 shape  genstep 1,6,4 nopstep 0,4,4 photon 100000,4,4 source 100000,4,4 record 100000,10,2,4 phosel 100000,1,4 recsel 100000,10,1,4 sequence 100000,1,2 seed 100000,1,1 hit 0,4,4 num_photons 100000 dynamic 0
+2019-07-24 12:32:37.260 INFO  [28154] [OpticksEvent::indexPhotonsCPU@2253] OpticksEvent::indexPhotonsCPU sequence 100000,1,2 phosel 100000,1,4 phosel.hasData 0 recsel0 100000,10,1,4 recsel0.hasData 0
+2019-07-24 12:32:37.261 INFO  [28154] [OpticksEvent::indexPhotonsCPU@2286] indexSequence START 
+2019-07-24 12:32:37.336 INFO  [28154] [OpticksEvent::indexPhotonsCPU@2288] indexSequence DONE 
+_copy_selection ni 100000 mask 64 size 64 
+2019-07-24 12:32:37.369 INFO  [28154] [OpticksEvent::collectPhotonHitsCPU@2218] OpticksEvent::collectPhotonHitsCPU numHits 0
+2019-07-24 12:32:37.370 INFO  [28154] [CSteppingAction::report@216] CG4::postpropagate
+ event_total 10
+ track_total 100000
+ step_total 312664
+2019-07-24 12:32:37.370 INFO  [28154] [CRandomEngine::postpropagate@691]  jump_photons 0
+2019-07-24 12:32:37.370 INFO  [28154] [CG4::postpropagate@390] ] (0)
+2019-07-24 12:32:37.370 INFO  [28154] [OpticksEvent::saveHitData@1636] saveHitData zero hits 
+2019-07-24 12:32:37.448 INFO  [28154] [OpticksEvent::makeReport@1713] tagdir /tmp/opc/opticks/tboolean-box/evt/tboolean-box/torch/-1
+2019-07-24 12:32:37.540 INFO  [28154] [OpticksEvent::makeReport@1713] tagdir /tmp/opc/opticks/tboolean-box/evt/tboolean-box/torch/1
+2019-07-24 12:32:37.551 INFO  [28154] [GGeoTest::anaEvent@855]  dbgnode -1 numTrees 2 evt 0x7d5f710
+2019-07-24 12:32:37.551 INFO  [28154] [OpticksEvent::getTestConfig@700]  gtc autoseqmap=TO:0,SR:1,SA:0_name=tboolean-box_outerfirst=1_analytic=1_csgpath=/tmp/opc/opticks/tboolean-box_mode=PyCsgInBox_autoobject=Vacuum/perfectSpecularSurface//GlassSchottF2_autoemitconfig=photons:600000,wavelength:380,time:0.2,posdelta:0.1,sheetmask:0x1,umin:0.45,umax:0.55,vmin:0.45,vmax:0.55,diffuse:1,ctmindiffuse:0.5,ctmaxdiffuse:1.0_autocontainer=Rock//perfectAbsorbSurface/Vacuum
+2019-07-24 12:32:37.556 INFO  [28154] [OpticksEventInstrument::CreateRecordsNPY@36] OpticksEventInstrument::CreateRecordsNPY  shape 100000,10,2,4
+2019-07-24 12:32:37.556 INFO  [28154] [OpticksEventAna::initOverride@67]  autoseqmap TO:0,SR:1,SA:0
+2019-07-24 12:32:37.560 INFO  [28154] [OpticksEventAna::checkPointExcursions@108]  seqmap TO:0,SR:1,SA:0 seqmap_his              8ad seqmap_val              121
+ p  0 abbrev TO val1  1 tree 0 count 0 dist (      0.000     0.000     0.000       0.000) xdist (     -0.100    -0.100    -0.100      -0.100) df   0.100000 expected
+ p  1 abbrev SR val1  2 tree 1 count 0 dist (      0.000     0.000     0.000       0.000) xdist (      0.000     0.000     0.000       0.000) df   0.000000 expected
+ p  2 abbrev SA val1  1 tree 0 count 0 dist (      0.000     0.000     0.000       0.000) xdist (      0.000     0.000     0.000       0.000) df   0.000000 expected
+2019-07-24 12:32:37.560 INFO  [28154] [OpticksEventAna::checkPointExcursions@157]  num_excursions 0
+2019-07-24 12:32:37.560 INFO  [28154] [OpticksEventAna::dump@232] GGeoTest::anaEvent OpticksEventAna pho 100000,4,4 seq 100000,1,2
+2019-07-24 12:32:37.560 INFO  [28154] [GGeoTest::anaEvent@855]  dbgnode -1 numTrees 2 evt 0x82b5bc0
+2019-07-24 12:32:37.561 INFO  [28154] [OpticksEvent::getTestConfig@700]  gtc autoseqmap=TO:0,SR:1,SA:0_name=tboolean-box_outerfirst=1_analytic=1_csgpath=/tmp/opc/opticks/tboolean-box_mode=PyCsgInBox_autoobject=Vacuum/perfectSpecularSurface//GlassSchottF2_autoemitconfig=photons:600000,wavelength:380,time:0.2,posdelta:0.1,sheetmask:0x1,umin:0.45,umax:0.55,vmin:0.45,vmax:0.55,diffuse:1,ctmindiffuse:0.5,ctmaxdiffuse:1.0_autocontainer=Rock//perfectAbsorbSurface/Vacuum
+2019-07-24 12:32:37.561 INFO  [28154] [OpticksEventInstrument::CreateRecordsNPY@36] OpticksEventInstrument::CreateRecordsNPY  shape 100000,10,2,4
+2019-07-24 12:32:37.561 INFO  [28154] [OpticksEventAna::initOverride@67]  autoseqmap TO:0,SR:1,SA:0
+2019-07-24 12:32:37.565 INFO  [28154] [OpticksEventAna::checkPointExcursions@108]  seqmap TO:0,SR:1,SA:0 seqmap_his              8ad seqmap_val              121
+ p  0 abbrev TO val1  1 tree 0 count 0 dist (      0.000     0.000     0.000       0.000) xdist (     -0.100    -0.100    -0.100      -0.100) df   0.100000 expected
+ p  1 abbrev SR val1  2 tree 1 count 0 dist (      0.000     0.000     0.000       0.000) xdist (      0.000     0.000     0.000       0.000) df   0.000000 expected
+ p  2 abbrev SA val1  1 tree 0 count 0 dist (      0.000     0.000     0.000       0.000) xdist (      0.000     0.000     0.000       0.000) df   0.000000 expected
+2019-07-24 12:32:37.565 INFO  [28154] [OpticksEventAna::checkPointExcursions@157]  num_excursions 0
+2019-07-24 12:32:37.565 INFO  [28154] [OpticksEventAna::dump@232] GGeoTest::anaEvent OpticksEventAna pho 100000,4,4 seq 100000,1,2
+2019-07-24 12:32:37.565 INFO  [28154] [OpticksAna::run@73]  anakey tboolean enabled Y
+2019-07-24 12:32:37.565 INFO  [28154] [OpticksAna::run@82]  cmdline tboolean.py --tagoffset 0 --tag 1 --cat tboolean-box --pfx tboolean-box --src torch --show  
+
+Detaching after fork from child process 28189.
+Gtk-Message: 12:32:43.218: Failed to load module "canberra-gtk-module"
+args: /home/opc/opticks/ana/tboolean.py --tagoffset 0 --tag 1 --cat tboolean-box --pfx tboolean-box --src torch --show
+[2019-07-24 12:32:43,237] p28189 {<module>            :tboolean.py:30} INFO     - pfx tboolean-box tag 1 src torch det tboolean-box c2max [1.5, 2.0, 2.5] ipython False 
+[2019-07-24 12:32:43,238] p28189 {load                :ab.py     :274} INFO     - [ False 
+[2019-07-24 12:32:43,238] p28189 {__init__            :evt.py    :173} INFO     - [ A 
+[2019-07-24 12:32:43,238] p28189 {tagdir_             :nload.py  :126} ERROR    - NON EXISTING tagdir : /home/opc/opticks/geocache/OKX4Test_lWorld0x4bc2710_PV_g4live/g4ok_gltf/f6cc352e44243f8fa536ab483ad390ce/1/tboolean-box/evt/tboolean-box/torch/1  expanded from $OPTICKS_EVENT_BASE/$0/evt/$1/$2/$3 
+[2019-07-24 12:32:43,238] p28189 {__init__            :evt.py    :231} CRITICAL - FAILED TO LOAD EVT : tagdir /home/opc/opticks/geocache/OKX4Test_lWorld0x4bc2710_PV_g4live/g4ok_gltf/f6cc352e44243f8fa536ab483ad390ce/1/tboolean-box/evt/tboolean-box/torch/1 DOES NOT EXIST 
+[2019-07-24 12:32:43,238] p28189 {__init__            :evt.py    :233} INFO     - ] A 
+[2019-07-24 12:32:43,239] p28189 {__init__            :evt.py    :173} INFO     - [ B 
+[2019-07-24 12:32:43,239] p28189 {tagdir_             :nload.py  :126} ERROR    - NON EXISTING tagdir : /home/opc/opticks/geocache/OKX4Test_lWorld0x4bc2710_PV_g4live/g4ok_gltf/f6cc352e44243f8fa536ab483ad390ce/1/tboolean-box/evt/tboolean-box/torch/-1  expanded from $OPTICKS_EVENT_BASE/$0/evt/$1/$2/$3 
+[2019-07-24 12:32:43,239] p28189 {__init__            :evt.py    :231} CRITICAL - FAILED TO LOAD EVT : tagdir /home/opc/opticks/geocache/OKX4Test_lWorld0x4bc2710_PV_g4live/g4ok_gltf/f6cc352e44243f8fa536ab483ad390ce/1/tboolean-box/evt/tboolean-box/torch/-1 DOES NOT EXIST 
+[2019-07-24 12:32:43,239] p28189 {__init__            :evt.py    :233} INFO     - ] B 
+[2019-07-24 12:32:43,239] p28189 {load                :ab.py     :295} CRITICAL - invalid loads : a.valid:False b.valid:False 
+[2019-07-24 12:32:43,239] p28189 {load                :ab.py     :308} INFO     - ] 
+[2019-07-24 12:32:43,239] p28189 {np_load             :nload.py  :73} WARNING  - np_load path_:/tmp/blyth/opticks/TRngBufTest.npy path:/tmp/blyth/opticks/TRngBufTest.npy DOES NOT EXIST 
+Traceback (most recent call last):
+  File "/home/opc/opticks/ana/tboolean.py", line 32, in <module>
+    ab = AB(ok)
+  File "/home/opc/opticks/ana/ab.py", line 251, in __init__
+    self.load_u()
+  File "/home/opc/opticks/ana/ab.py", line 346, in load_u
+    u = np_load(upath).astype(np.float32)
+AttributeError: 'NoneType' object has no attribute 'astype'
+2019-07-24 12:32:43.664 INFO  [28154] [SSys::run@72] tboolean.py --tagoffset 0 --tag 1 --cat tboolean-box --pfx tboolean-box --src torch --show   rc_raw : 256 rc : 1
+2019-07-24 12:32:43.665 ERROR [28154] [SSys::run@79] FAILED with  cmd tboolean.py --tagoffset 0 --tag 1 --cat tboolean-box --pfx tboolean-box --src torch --show   RC 1
+
+2019-07-24 12:32:43.665 INFO  [28154] [OpticksAna::run@94]  anakey tboolean cmdline tboolean.py --tagoffset 0 --tag 1 --cat tboolean-box --pfx tboolean-box --src torch --show   interactivity 0 rc 1 rcmsg OpticksAna::run non-zero RC from ana script
+2019-07-24 12:32:43.665 FATAL [28154] [Opticks::dumpRC@204]  rc 1 rcmsg : OpticksAna::run non-zero RC from ana script
+2019-07-24 12:32:43.671 INFO  [28154] [OpticksProfile::dump@372] Opticks::postpropagate dir /tmp/opc/opticks/tboolean-box/evt/tboolean-box/torch name OpticksProfile.npy num_stamp 157
+2019-07-24 12:32:43.672 INFO  [28154] [BTimesTable::dump@154] Opticks::postpropagate startswith filter: NONE spacewith _OpticksRun::createEvent tcut -1 nline 157
+ diffListedTime           Time      DeltaTime             VM        DeltaVM
+    0          0.000    0.000000000045136.1445312500   0.0000000000 418.7000122070 : OpticksRun::OpticksRun_1668248693
+    1          0.000    0.0000000000   0.0000000000   0.0000000000   0.0000000000 : Opticks::Opticks_0
+    2          0.000    0.0000000000   0.0000000000   0.0000000000   0.0000000000 : _OKG4Mgr::OKG4Mgr_0
+    3          0.000    0.0000000000   0.0000000000   0.0000000000   0.0000000000 : _OpticksHub::init_0
+    4          0.016    0.0156250000   0.0156250000   0.0000000000   0.0000000000 : _OpticksGeometry::loadGeometry_0
+    5          0.551    0.5664062500   0.5507812500 123.7439575195 123.7439575195 : OpticksGeometry::loadGeometry_0
+    6          0.043    0.6093750000   0.0429687500 129.5919799805   5.8480224609 : _GMergedMesh::Create_0
+    7          0.000    0.6093750000   0.0000000000 129.5919799805   0.0000000000 : GMergedMesh::Create::Count_0
+    8          0.000    0.6093750000   0.0000000000 129.5919799805   0.0000000000 : _GMergedMesh::Create::Allocate_0
+    9          0.000    0.6093750000   0.0000000000 129.8919677734   0.2999877930 : GMergedMesh::Create::Allocate_0
+   10          0.004    0.6132812500   0.0039062500 130.6879882812   0.7960205078 : GMergedMesh::Create::Merge_0
+   11          0.000    0.6132812500   0.0000000000 130.6879882812   0.0000000000 : GMergedMesh::Create::Bounds_0
+   12          0.148    0.7617187500   0.1484375000 140.9439697266  10.2559814453 : OpticksHub::init_0
+   13          0.000    0.7617187500   0.0000000000 140.9439697266   0.0000000000 : _CG4::CG4_0
+   14          0.000    0.7617187500   0.0000000000 140.9439697266   0.0000000000 : _CRandomEngine::CRandomEngine_0
+   15          0.000    0.7617187500   0.0000000000 140.9439697266   0.0000000000 : _TCURAND::TCURAND_0
+   16          0.000    0.7617187500   0.0000000000 140.9439697266   0.0000000000 : _TCURANDImp::TCURANDImp_0
+   17          0.000    0.7617187500   0.0000000000 140.9439697266   0.0000000000 : _dvec_dox_0
+   18          0.594    1.3554687500   0.593750000013823.751953125013682.8085937500 : dvec_dox_0
+   19          0.000    1.3554687500   0.000000000013823.7519531250   0.0000000000 : _TRngBuf::TRngBuf_0
+   20          0.000    1.3554687500   0.000000000013823.7519531250   0.0000000000 : TRngBuf::TRngBuf_0
+   21          0.203    1.5585937500   0.203125000014023.7558593750 200.0039062500 : TCURANDImp::TCURANDImp_0
+   22          0.004    1.5625000000   0.003906250014023.7558593750   0.0000000000 : TCURAND::TCURAND_0
+   23          0.000    1.5625000000   0.000000000014023.7558593750   0.0000000000 : CRandomEngine::CRandomEngine_0
+   24          0.000    1.5625000000   0.000000000014023.7558593750   0.0000000000 : _CPhysics::CPhysics_0
+   25          0.051    1.6132812500   0.050781250014025.6318359375   1.8759765625 : CPhysics::CPhysics_0
+   26          0.008    1.6210937500   0.007812500014026.0800781250   0.4482421875 : CG4::CG4_0
+   27          0.008    1.6289062500   0.007812500014027.3994140625   1.3193359375 : _OKPropagator::OKPropagator_0
+   28          0.004    1.6328125000   0.003906250014027.3994140625   0.0000000000 : _OpEngine::OpEngine_0
+   29          0.000    1.6328125000   0.000000000014027.3994140625   0.0000000000 : _OScene::OScene_0
+   30          0.000    1.6328125000   0.000000000014027.3994140625   0.0000000000 : _OContext::Create_0
+   31          0.070    1.7031250000   0.070312500014087.3798828125  59.9804687500 : _optix::Context::create_0
+   32          0.527    2.2304687500   0.527343750015890.73144531251803.3515625000 : optix::Context::create_0
+   33          0.000    2.2304687500   0.000000000015890.7314453125   0.0000000000 : OContext::Create_0
+   34          0.387    2.6171875000   0.386718750015900.1914062500   9.4599609375 : OScene::OScene_0
+   35          1.078    3.6953125000   1.078125000016181.4482421875 281.2568359375 : OpEngine::OpEngine_0
+   36          0.000    3.6953125000   0.000000000016181.4482421875   0.0000000000 : OKPropagator::OKPropagator_0
+   37          0.000    3.6953125000   0.000000000016181.4482421875   0.0000000000 : OKG4Mgr::OKG4Mgr_0
+
+   38          0.000    3.6953125000   0.000000000016181.4482421875   0.0000000000 : _OpticksRun::createEvent_0
+   39          0.000    3.6953125000   0.000000000016181.4482421875   0.0000000000 : _OpticksEvent::setNopstepData_0
+   40          0.000    3.6953125000   0.000000000016181.4482421875   0.0000000000 : OpticksEvent::setNopstepData_0
+   41          0.004    3.6992187500   0.003906250016181.4482421875   0.0000000000 : _OpticksEvent::setNopstepData_0
+   42          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : OpticksEvent::setNopstepData_0
+   43          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : OpticksRun::createEvent_0
+   44          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : _OpticksRun::setGensteps_0
+   45          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : _OpticksRun::importGensteps_0
+   46          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : _OpticksRun::importGenstepData_0
+   47          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : OpticksRun::importGenstepData_0
+   48          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : _OpticksEvent::setGenstepData_0
+   49          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : OpticksEvent::setGenstepData_0
+   50          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : _OpticksEvent::setGenstepData_0
+   51          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : OpticksEvent::setGenstepData_0
+   52          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : _OpticksEvent::setSourceData_0
+   53          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : _OpticksEvent::setSourceData_MultiViewNPY_0
+   54          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : OpticksEvent::setSourceData_MultiViewNPY_0
+   55          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : OpticksEvent::setSourceData_0
+   56          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : _OpticksEvent::setSourceData_0
+   57          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : _OpticksEvent::setSourceData_MultiViewNPY_0
+   58          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : OpticksEvent::setSourceData_MultiViewNPY_0
+   59          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : OpticksEvent::setSourceData_0
+   60          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : _OpticksEvent::setNopstepData_0
+   61          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : OpticksEvent::setNopstepData_0
+   62          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : OpticksRun::importGensteps_0
+   63          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : OpticksRun::setGensteps_0
+   64          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : _OKPropagator::propagate_0
+   65          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : _OEvent::upload_0
+   66          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : _OEvent::uploadGensteps_0
+   67          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : OEvent::uploadGensteps_0
+   68          0.000    3.6992187500   0.000000000016181.4482421875   0.0000000000 : _OEvent::uploadSource_0
+   69          0.004    3.7031250000   0.003906250016181.4482421875   0.0000000000 : OEvent::uploadSource_0
+   70          0.000    3.7031250000   0.000000000016181.4482421875   0.0000000000 : OEvent::upload_0
+   71          0.000    3.7031250000   0.000000000016181.4482421875   0.0000000000 : _OpSeeder::seedPhotonsFromGenstepsViaOptiX_0
+   72          0.000    3.7031250000   0.000000000016181.4482421875   0.0000000000 : OpSeeder::seedPhotonsFromGenstepsViaOptiX_0
+   73          0.000    3.7031250000   0.000000000016181.4482421875   0.0000000000 : _OPropagator::prelaunch_0
+   74          1.438    5.1406250000   1.437500000016827.1289062500 645.6796875000 : OPropagator::prelaunch_0
+   75          0.000    5.1406250000   0.000000000016827.1289062500   0.0000000000 : _OPropagator::launch_0
+   76          0.012    5.1523437500   0.011718750017187.5761718750 360.4472656250 : OPropagator::launch_0
+   77          0.000    5.1523437500   0.000000000017187.5761718750   0.0000000000 : _OpIndexer::indexSequence_0
+   78          0.000    5.1523437500   0.000000000017187.5761718750   0.0000000000 : _OpIndexer::indexSequenceCompute_0
+   79          0.004    5.1562500000   0.003906250017187.5761718750   0.0000000000 : _OpIndexer::seqhisMakeLookup_0
+   80          0.008    5.1640625000   0.007812500017187.5761718750   0.0000000000 : OpIndexer::seqhisMakeLookup_0
+   81          0.000    5.1640625000   0.000000000017187.5761718750   0.0000000000 : OpIndexer::seqhisApplyLookup_0
+   82          0.000    5.1640625000   0.000000000017187.5761718750   0.0000000000 : _OpIndexer::seqmatMakeLookup_0
+   83          0.004    5.1679687500   0.003906250017187.5761718750   0.0000000000 : OpIndexer::seqmatMakeLookup_0
+   84          0.000    5.1679687500   0.000000000017187.5761718750   0.0000000000 : OpIndexer::seqmatApplyLookup_0
+   85          0.000    5.1679687500   0.000000000017187.5761718750   0.0000000000 : _OpIndexer::download_0
+   86          0.004    5.1718750000   0.003906250017187.5761718750   0.0000000000 : OpIndexer::download_0
+   87          0.000    5.1718750000   0.000000000017187.5761718750   0.0000000000 : OpIndexer::indexSequenceCompute_0
+   88          0.000    5.1718750000   0.000000000017187.5761718750   0.0000000000 : OpIndexer::indexSequence_0
+   89          0.000    5.1718750000   0.000000000017187.5761718750   0.0000000000 : _OpIndexer::indexBoundaries_0
+   90          0.000    5.1718750000   0.000000000017187.5761718750   0.0000000000 : OpIndexer::indexBoundaries_0
+   91          0.000    5.1718750000   0.000000000017187.5761718750   0.0000000000 : OKPropagator::propagate_0
+   92          0.000    5.1718750000   0.000000000017187.5761718750   0.0000000000 : _OEvent::download_0
+   93          0.062    5.2343750000   0.062500000017231.5449218750  43.9687500000 : OEvent::download_0
+   94          0.000    5.2343750000   0.000000000017231.5449218750   0.0000000000 : _OEvent::downloadHitsCompute_0
+   95          0.000    5.2343750000   0.000000000017231.5449218750   0.0000000000 : OEvent::downloadHitsCompute_0
+   96          0.000    5.2343750000   0.000000000017231.5449218750   0.0000000000 : OKPropagator::propagate-download_0
+   97          0.043    5.2773437500   0.042968750017254.9843750000  23.4394531250 : _CG4::propagate_0
+   98          1.617    6.8945312500   1.617187500017254.9843750000   0.0000000000 : CRunAction::BeginOfRunAction_0
+   99          0.000    6.8945312500   0.000000000017254.9843750000   0.0000000000 : _CInputPhotonSource::GeneratePrimaryVertex_0
+  100          0.016    6.9101562500   0.015625000017254.9843750000   0.0000000000 : CInputPhotonSource::GeneratePrimaryVertex_0
+  101          0.000    6.9101562500   0.000000000017254.9843750000   0.0000000000 : CEventAction::BeginOfEventAction_0
+  102          0.008    6.9179687500   0.007812500017254.9843750000   0.0000000000 : _CRandomEngine::setupTranche_0
+  103          0.227    7.1445312500   0.226562500017353.2890625000  98.3046875000 : CRandomEngine::setupTranche_0
+  104          1.387    8.5312500000   1.386718750017353.2890625000   0.0000000000 : CEventAction::EndOfEventAction_0
+  105          0.000    8.5312500000   0.000000000017353.2890625000   0.0000000000 : _CInputPhotonSource::GeneratePrimaryVertex_0
+  106          0.016    8.5468750000   0.015625000017355.3359375000   2.0468750000 : CInputPhotonSource::GeneratePrimaryVertex_0
+  107          0.000    8.5468750000   0.000000000017355.3359375000   0.0000000000 : CEventAction::BeginOfEventAction_0
+  108          1.383    9.9296875000   1.382812500017355.3359375000   0.0000000000 : CEventAction::EndOfEventAction_0
+  109          0.000    9.9296875000   0.000000000017355.3359375000   0.0000000000 : _CInputPhotonSource::GeneratePrimaryVertex_0
+  110          0.012    9.9414062500   0.011718750017355.3359375000   0.0000000000 : CInputPhotonSource::GeneratePrimaryVertex_0
+  111          0.000    9.9414062500   0.000000000017355.3359375000   0.0000000000 : CEventAction::BeginOfEventAction_0
+  112          1.387   11.3281250000   1.386718750017355.3359375000   0.0000000000 : CEventAction::EndOfEventAction_0
+  113          0.000   11.3281250000   0.000000000017355.3359375000   0.0000000000 : _CInputPhotonSource::GeneratePrimaryVertex_0
+  114          0.016   11.3437500000   0.015625000017359.4335937500   4.0976562500 : CInputPhotonSource::GeneratePrimaryVertex_0
+  115          0.000   11.3437500000   0.000000000017359.4335937500   0.0000000000 : CEventAction::BeginOfEventAction_0
+  116          1.383   12.7265625000   1.382812500017359.4335937500   0.0000000000 : CEventAction::EndOfEventAction_0
+  117          0.000   12.7265625000   0.000000000017359.4335937500   0.0000000000 : _CInputPhotonSource::GeneratePrimaryVertex_0
+  118          0.016   12.7421875000   0.015625000017359.4335937500   0.0000000000 : CInputPhotonSource::GeneratePrimaryVertex_0
+  119          0.000   12.7421875000   0.000000000017359.4335937500   0.0000000000 : CEventAction::BeginOfEventAction_0
+  120          1.375   14.1171875000   1.375000000017359.4335937500   0.0000000000 : CEventAction::EndOfEventAction_0
+  121          0.004   14.1210937500   0.003906250017359.4335937500   0.0000000000 : _CInputPhotonSource::GeneratePrimaryVertex_0
+  122          0.012   14.1328125000   0.011718750017359.4335937500   0.0000000000 : CInputPhotonSource::GeneratePrimaryVertex_0
+  123          0.000   14.1328125000   0.000000000017359.4335937500   0.0000000000 : CEventAction::BeginOfEventAction_0
+  124          1.383   15.5156250000   1.382812500017359.4335937500   0.0000000000 : CEventAction::EndOfEventAction_0
+  125          0.004   15.5195312500   0.003906250017359.4335937500   0.0000000000 : _CInputPhotonSource::GeneratePrimaryVertex_0
+  126          0.016   15.5351562500   0.015625000017367.6250000000   8.1914062500 : CInputPhotonSource::GeneratePrimaryVertex_0
+  127          0.000   15.5351562500   0.000000000017367.6250000000   0.0000000000 : CEventAction::BeginOfEventAction_0
+  128          1.387   16.9218750000   1.386718750017367.6250000000   0.0000000000 : CEventAction::EndOfEventAction_0
+  129          0.000   16.9218750000   0.000000000017367.6250000000   0.0000000000 : _CInputPhotonSource::GeneratePrimaryVertex_0
+  130          0.016   16.9375000000   0.015625000017367.6250000000   0.0000000000 : CInputPhotonSource::GeneratePrimaryVertex_0
+  131          0.000   16.9375000000   0.000000000017367.6250000000   0.0000000000 : CEventAction::BeginOfEventAction_0
+  132          1.383   18.3203125000   1.382812500017367.6250000000   0.0000000000 : CEventAction::EndOfEventAction_0
+  133          0.000   18.3203125000   0.000000000017367.6250000000   0.0000000000 : _CInputPhotonSource::GeneratePrimaryVertex_0
+  134          0.012   18.3320312500   0.011718750017367.6250000000   0.0000000000 : CInputPhotonSource::GeneratePrimaryVertex_0
+  135          0.004   18.3359375000   0.003906250017367.6250000000   0.0000000000 : CEventAction::BeginOfEventAction_0
+  136          1.379   19.7148437500   1.378906250017367.6250000000   0.0000000000 : CEventAction::EndOfEventAction_0
+  137          0.000   19.7148437500   0.000000000017367.6250000000   0.0000000000 : _CInputPhotonSource::GeneratePrimaryVertex_0
+  138          0.012   19.7265625000   0.011718750017367.6250000000   0.0000000000 : CInputPhotonSource::GeneratePrimaryVertex_0
+  139          0.000   19.7265625000   0.000000000017367.6250000000   0.0000000000 : CEventAction::BeginOfEventAction_0
+  140          1.387   21.1132812500   1.386718750017367.6250000000   0.0000000000 : CEventAction::EndOfEventAction_0
+  141          0.004   21.1171875000   0.003906250017367.6250000000   0.0000000000 : CRunAction::EndOfRunAction_0
+  142          0.000   21.1171875000   0.000000000017367.6250000000   0.0000000000 : CG4::propagate_0
+  143          0.000   21.1171875000   0.000000000017367.6250000000   0.0000000000 : _OpticksEvent::indexPhotonsCPU_0
+  144          0.098   21.2148437500   0.097656250017367.6250000000   0.0000000000 : OpticksEvent::indexPhotonsCPU_0
+  145          0.000   21.2148437500   0.000000000017367.6250000000   0.0000000000 : _OpticksEvent::collectPhotonHitsCPU_0
+  146          0.012   21.2265625000   0.011718750017367.6250000000   0.0000000000 : OpticksEvent::collectPhotonHitsCPU_0
+  147          0.000   21.2265625000   0.000000000017367.6250000000   0.0000000000 : _OpticksRun::saveEvent_0
+  148          0.000   21.2265625000   0.000000000017367.6250000000   0.0000000000 : _OpticksEvent::save_0
+  149          0.078   21.3046875000   0.078125000017367.6250000000   0.0000000000 : OpticksEvent::save_0
+  150          0.012   21.3164062500   0.011718750017367.6250000000   0.0000000000 : _OpticksEvent::save_0
+  151          0.078   21.3945312500   0.078125000017367.6250000000   0.0000000000 : OpticksEvent::save_0
+  152          0.012   21.4062500000   0.011718750017367.6250000000   0.0000000000 : OpticksRun::saveEvent_0
+  153          0.016   21.4218750000   0.015625000017367.6250000000   0.0000000000 : _OpticksRun::anaEvent_0
+  154          6.098   27.5195312500   6.097656250017367.6250000000   0.0000000000 : OpticksRun::anaEvent_0
+  155          0.000   27.5195312500   0.000000000017367.6250000000   0.0000000000 : _OpticksRun::resetEvent_0
+  156          0.000   27.5195312500   0.000000000017367.6250000000   0.0000000000 : OpticksRun::resetEvent_0
+2019-07-24 12:32:43.673 INFO  [28154] [OpticksProfile::dump@378]  npy 157,4 /tmp/opc/opticks/tboolean-box/evt/tboolean-box/torch/OpticksProfile.npy
+2019-07-24 12:32:43.673 INFO  [28154] [OpticksProfile::accumulateDump@265] Opticks::postpropagate nacc 1
+0000 : Acc                        CRandomEngine::setupTranche n         1 t    0.2255 v 98304.0000
+2019-07-24 12:32:43.673 INFO  [28154] [OpticksProfile::dump@372] Opticks::postpropagate dir /tmp/opc/opticks/tboolean-box/evt/tboolean-box/torch name OpticksProfile.npy num_stamp 157
+2019-07-24 12:32:43.674 INFO  [28154] [BTimesTable::dump@154] Opticks::postpropagate startswith filter: OPropagator::launch spacewith - tcut 0 nline 157
+0diffListedTime           Time      DeltaTime             VM        DeltaVM
+0007600000000005.152    5.1523437500   0.011718750017187.5761718750 360.4472656250 : OPropagator::launch_0
+2019-07-24 12:32:43.674 INFO  [28154] [OpticksProfile::dump@378]  npy 157,4 /tmp/opc/opticks/tboolean-box/evt/tboolean-box/torch/OpticksProfile.npy
+2019-07-24 12:32:43.674 INFO  [28154] [OpticksProfile::accumulateDump@265] Opticks::postpropagate nacc 1
+0000 : Acc                        CRandomEngine::setupTranche n         1 t    0.2255 v 98304.0000
+2019-07-24 12:32:43.674 INFO  [28154] [OpticksProfile::dump@372] Opticks::postpropagate dir /tmp/opc/opticks/tboolean-box/evt/tboolean-box/torch name OpticksProfile.npy num_stamp 157
+2019-07-24 12:32:43.674 INFO  [28154] [BTimesTable::dump@154] Opticks::postpropagate startswith filter: CG4::propagate spacewith - tcut 0 nline 157
+0diffListedTime           Time      DeltaTime             VM        DeltaVM
+0014200000000021.117   21.1171875000   0.000000000017367.6250000000   0.0000000000 : CG4::propagate_0
+2019-07-24 12:32:43.674 INFO  [28154] [OpticksProfile::dump@378]  npy 157,4 /tmp/opc/opticks/tboolean-box/evt/tboolean-box/torch/OpticksProfile.npy
+2019-07-24 12:32:43.674 INFO  [28154] [OpticksProfile::accumulateDump@265] Opticks::postpropagate nacc 1
+0000 : Acc                        CRandomEngine::setupTranche n         1 t    0.2255 v 98304.0000
+2019-07-24 12:32:43.674 INFO  [28154] [NMeta::dump@129] Opticks::postpropagate
+{
+    "--envkey": 1,
+    "ARGS": "--okg4 --align --dbgskipclearzero --dbgnojumpzero --dbgkludgeflatzero -D --envkey --rendermode +global,+axis --geocenter --stack 2180 --eye 1,0,0 --up 0,0,1 --test --testconfig autoseqmap=TO:0,SR:1,SA:0_name=tboolean-box_outerfirst=1_analytic=1_csgpath=/tmp/opc/opticks/tboolean-box_mode=PyCsgInBox_autoobject=Vacuum/perfectSpecularSurface//GlassSchottF2_autoemitconfig=photons:600000,wavelength:380,time:0.2,posdelta:0.1,sheetmask:0x1,umin:0.45,umax:0.55,vmin:0.45,vmax:0.55,diffuse:1,ctmindiffuse:0.5,ctmaxdiffuse:1.0_autocontainer=Rock//perfectAbsorbSurface/Vacuum --torch --torchconfig type=disc_photons=100000_mode=fixpol_polarization=1,1,0_frame=-1_transform=1.000,0.000,0.000,0.000,0.000,1.000,0.000,0.000,0.000,0.000,1.000,0.000,0.000,0.000,0.000,1.000_source=0,0,599_target=0,0,0_time=0.1_radius=300_distance=200_zenithazimuth=0,1,0,1_material=Vacuum_wavelength=500 --torchdbg --tag 1 --anakey tboolean --args --save",
+    "BINARY": "/home/opc/opticks/lib/OKG4Test",
+    "CMD": "--okg4",
+    "CMDLINE": "/home/opc/opticks/lib/OKG4Test --okg4 --align --dbgskipclearzero --dbgnojumpzero --dbgkludgeflatzero -D --envkey --rendermode +global,+axis --geocenter --stack 2180 --eye 1,0,0 --up 0,0,1 --test --testconfig autoseqmap=TO:0,SR:1,SA:0_name=tboolean-box_outerfirst=1_analytic=1_csgpath=/tmp/opc/opticks/tboolean-box_mode=PyCsgInBox_autoobject=Vacuum/perfectSpecularSurface//GlassSchottF2_autoemitconfig=photons:600000,wavelength:380,time:0.2,posdelta:0.1,sheetmask:0x1,umin:0.45,umax:0.55,vmin:0.45,vmax:0.55,diffuse:1,ctmindiffuse:0.5,ctmaxdiffuse:1.0_autocontainer=Rock//perfectAbsorbSurface/Vacuum --torch --torchconfig type=disc_photons=100000_mode=fixpol_polarization=1,1,0_frame=-1_transform=1.000,0.000,0.000,0.000,0.000,1.000,0.000,0.000,0.000,0.000,1.000,0.000,0.000,0.000,0.000,1.000_source=0,0,599_target=0,0,0_time=0.1_radius=300_distance=200_zenithazimuth=0,1,0,1_material=Vacuum_wavelength=500 --torchdbg --tag 1 --anakey tboolean --args --save ",
+    "COMPUTE_CAPABILITY": "60",
+    "DBG": "1",
+    "HOME": "/home/opc/opticks",
+    "KEY": "OKX4Test.X4PhysicalVolume.lWorld0x4bc2710_PV.f6cc352e44243f8fa536ab483ad390ce",
+    "NumDevices": 1,
+    "OptiXVersion": 60000,
+    "RTXMode": 0,
+    "VisibleDevices": "Tesla_P100-SXM2-16GB",
+    "idpath": "/home/opc/opticks/geocache/OKX4Test_lWorld0x4bc2710_PV_g4live/g4ok_gltf/f6cc352e44243f8fa536ab483ad390ce/1",
+    "stacksize": 2180
+}
+2019-07-24 12:32:43.675 INFO  [28154] [Opticks::saveParameters@1025]  postpropagate save parameters.json into TagZeroDir /tmp/opc/opticks/tboolean-box/evt/tboolean-box/torch/0
+2019-07-24 12:32:43.675 FATAL [28154] [Opticks::dumpRC@204]  rc 1 rcmsg : OpticksAna::run non-zero RC from ana script
+2019-07-24 12:32:43.675 INFO  [28154] [main@13]  RC 1
+[Thread 0x7fffbd9b5700 (LWP 28165) exited]
+[Thread 0x7fffbd1b4700 (LWP 28166) exited]
+[Thread 0x7fffbc9b3700 (LWP 28167) exited]
+[Thread 0x7fff89fa7700 (LWP 28168) exited]
+[Thread 0x7fff897a6700 (LWP 28169) exited]
+[Thread 0x7fff88fa5700 (LWP 28170) exited]
+[Thread 0x7fff73fff700 (LWP 28171) exited]
+[Thread 0x7fff737fe700 (LWP 28172) exited]
+[Thread 0x7fff72ffd700 (LWP 28173) exited]
+[Thread 0x7fff727fc700 (LWP 28174) exited]
+[Thread 0x7fff71ffb700 (LWP 28175) exited]
+[Thread 0x7fff717fa700 (LWP 28176) exited]
+[Thread 0x7fff70ff9700 (LWP 28177) exited]
+[Thread 0x7fff4ffff700 (LWP 28178) exited]
+[Thread 0x7fff4f7fe700 (LWP 28179) exited]
+[Thread 0x7fff4effd700 (LWP 28180) exited]
+[Thread 0x7fff4e7fc700 (LWP 28181) exited]
+[Thread 0x7fff4dffb700 (LWP 28182) exited]
+[Thread 0x7fff4d7fa700 (LWP 28183) exited]
+[Thread 0x7fff4cff9700 (LWP 28184) exited]
+[Thread 0x7fff2ffff700 (LWP 28185) exited]
+[Thread 0x7fff27fff700 (LWP 28186) exited]
+[Thread 0x7fff2f7fe700 (LWP 28187) exited]
+[Thread 0x7fff2effd700 (LWP 28188) exited]
+2019-07-24 12:32:44.183 INFO  [28154] [OContext::cleanUpCache@479]  RemoveDir /var/tmp/OptixCache
+2019-07-24 12:32:44.183 INFO  [28154] [CG4::cleanup@397] [
+2019-07-24 12:32:44.183 INFO  [28154] [CG4::cleanup@399] ]
+[Thread 0x7fffddb54700 (LWP 28163) exited]
+[Thread 0x7ffff7fb4840 (LWP 28154) exited]
+[Inferior 1 (process 28154) exited with code 01]
+Missing separate debuginfos, use: debuginfo-install expat-2.1.0-10.el7_3.x86_64 glibc-2.17-260.el7_6.6.x86_64 keyutils-libs-1.5.8-3.el7.x86_64 krb5-libs-1.15.1-37.el7_6.x86_64 libX11-1.6.5-2.el7.x86_64 libXau-1.0.8-2.1.el7.x86_64 libXcursor-1.1.15-1.el7.x86_64 libXext-1.3.3-3.el7.x86_64 libXfixes-5.0.3-1.el7.x86_64 libXi-1.7.9-1.el7.x86_64 libXinerama-1.1.3-2.1.el7.x86_64 libXrandr-1.5.1-2.el7.x86_64 libXrender-0.9.10-1.el7.x86_64 libXxf86vm-1.1.4-1.el7.x86_64 libcom_err-1.42.9-13.el7.x86_64 libgcc-4.8.5-36.el7_6.2.x86_64 libglvnd-1.0.1-0.8.git5baa1e5.el7.x86_64 libglvnd-glx-1.0.1-0.8.git5baa1e5.el7.x86_64 libselinux-2.5-14.1.el7.x86_64 libstdc++-4.8.5-36.el7_6.2.x86_64 libxcb-1.13-1.el7.x86_64 openssl-libs-1.0.2k-16.el7_6.1.x86_64 pcre-8.32-17.el7.x86_64 zlib-1.2.7-18.el7.x86_64
+(gdb) q
+=== o-main : gdb --args /home/opc/opticks/lib/OKG4Test --okg4 --align --dbgskipclearzero --dbgnojumpzero --dbgkludgeflatzero -D --envkey --rendermode +global,+axis --geocenter --stack 2180 --eye 1,0,0 --up 0,0,1 --test --testconfig autoseqmap=TO:0,SR:1,SA:0_name=tboolean-box_outerfirst=1_analytic=1_csgpath=/tmp/opc/opticks/tboolean-box_mode=PyCsgInBox_autoobject=Vacuum/perfectSpecularSurface//GlassSchottF2_autoemitconfig=photons:600000,wavelength:380,time:0.2,posdelta:0.1,sheetmask:0x1,umin:0.45,umax:0.55,vmin:0.45,vmax:0.55,diffuse:1,ctmindiffuse:0.5,ctmaxdiffuse:1.0_autocontainer=Rock//perfectAbsorbSurface/Vacuum --torch --torchconfig type=disc_photons=100000_mode=fixpol_polarization=1,1,0_frame=-1_transform=1.000,0.000,0.000,0.000,0.000,1.000,0.000,0.000,0.000,0.000,1.000,0.000,0.000,0.000,0.000,1.000_source=0,0,599_target=0,0,0_time=0.1_radius=300_distance=200_zenithazimuth=0,1,0,1_material=Vacuum_wavelength=500 --torchdbg --tag 1 --anakey tboolean --args --save ======= PWD /home/opc RC 0 Wed 24 Jul 12:33:14 GMT 2019
+echo o-postline : dummy
+o-postline : dummy
+/home/opc/opticks/bin/o.sh : RC : 0
+tboolean-- RC 0
+=== tboolean-lv : tboolean-box RC 0
+====== /home/opc/opticks/bin/tboolean.sh -D ====== PWD /home/opc ============ RC 0 =======
