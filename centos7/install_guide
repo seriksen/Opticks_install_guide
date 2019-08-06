@@ -6,7 +6,7 @@ Oracle VM.GPU2.1 with Tesla P100
 CentOS 7
 CUDA 10.1
 NVidia OptiX 6.0.0
-Opticks 6506513 https://bitbucket.org/simoncblyth/opticks/commits/6506513367e68c8da77a3f04c74e32af72cf601e
+Opticks 6d76484 https://bitbucket.org/simoncblyth/opticks/commits/6d7648490a9300cc75828bf9c0cb4dfc3c187a0b
 ```
 
 ## Setup X11
@@ -236,8 +236,6 @@ To install opticks you have to be root.
 Many of the issues which you will face during installation are already documented in `notes/issues/` of opticks.
 Other issues are listed at https://groups.io/g/opticks/topics.
 
-This guide is using Opticks 6506513 https://bitbucket.org/simoncblyth/opticks/commits/6506513367e68c8da77a3f04c74e32af72cf601e
-
 ### Opticks instructions
 Using the opticks functions to build/install things is not always error free. 
 It may also gloss over errors so it is best to have a directory of logs.
@@ -420,6 +418,7 @@ opticks-externals-info
 ```
 
 Now get boost.
+May need opticks-cmake-generator in custom_opticks_setup for this (or may be able to exclude it from everything)
 ```code
 [opc@bristollz cmake-3.14.1]$ opticks-
 [opc@bristollz cmake-3.14.1]$ boost-
@@ -473,38 +472,16 @@ opticks-cmake-generator(){ echo ${OPTICKS_CMAKE_GENERATOR:-Unix Makefiles} ; }
 # Fuck it, just install some other things too
 [opc@bristollz ~]$ sudo yum install -y freeglut-devel freeglut expat-devel
 
+# Could also get doxygen
 
 # edit GFindOpticksGLEW.cmake to search in lib64 (for imgui to work)
-# /home/ubuntu/opticks/cmake/Modules/FindOpticksGLEW.cmake line 11 to 
+# /home/opc/opticks/cmake/Modules/FindOpticksGLEW.cmake line 11 to
 # PATHS ${OpticksGLEW_PREFIX}/lib64)
-
-# Open mesh will fail compiling using official release 6.3.
-# Trying release 7.1
-# edit file open /home/ubuntu/opticks/externals/openmesh.bash line 1071
-
-# For geant4 get expat
-root@bristollz:/home/ubuntu/opticks# sudo apt-get install libexpat1-dev
 
 # Now install externals (will take a long time, G4 make will take ~1 hour)
 # For when they go wrong do -wipe, eg glfw-wipe then glfw-- (which does glfw-get, glfw-cmake, gldw-make install) 
 [opc@bristollz ~]$ opticks-externals-install 2>&1 | tee opticks_build_logs/externals_install.log
 ```
-I'm not sure if all the externals install correctly. 
-GLEW defo doesn't (but I don't think it should as it's openGL related).
-There are still warnings, but it gets through everything.
-GLFW cache fails to laid!!!!
-From ubuntu, seems like I need to change FindOpticksGLEW for imgui to work!!!! very interesting
-
-
-
-build errors... during openmesh
-Building Apps disabled by user.
--- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
--- Looking for PythonLibs
-PythonLibs not found! Skipping Python Bindings.
-
-
-Getting further with an older opticks version (some used in ubuntu case)
 
 ### Install Opticks-full
 Now to prepare of opticks-full. 
@@ -561,6 +538,14 @@ export CXXFLAGS="$CXXFLAGS -fPIC"
 export CFLAGS="$CFLAGS -fPIC"
 ```
 
+We must also set the compute capability.
+Not setting this will cause OKConf and sysrap tests to fail as it's default is 0.
+The compute capability of the GPU can be found at https://developer.nvidia.com/cuda-gpus.
+6.1 = 61, 6.0 = 60 etc...
+Add the following line to the setup script...
+```code
+export OPTICKS_COMPUTE_CAPABILITY=60
+```
 Now install opticks
 ```code
 opticks-full
@@ -572,7 +557,14 @@ Prepare to run opticks tests.
 We need the following libraries
 ```code
 sudo yum install -y python-devel python-pip ipython
-pip install numpy matplotlib
+```
+
+Require numpy 1.14+ (1.16.4 works)
+```code
+# Remove numpy from distro at /usr/lib64/python2.7/site-packages
+
+# Get numpy
+sudo pip install numpy
 ```
 
 Set up geometry
@@ -591,3 +583,6 @@ Run opticks tests
 ```code
 opticks-t
 ```
+
+NOTE: Two tests should fail (OptiXRap tests). These are because Opticks does not currently work full with NVidia OptiX 6.0.0.
+NVidia OptiX works with 5.2.0 (but I haven't tested it)
