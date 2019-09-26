@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SchemaLocation">
+
+  <solids>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="trussVessel_solid40x607c700" rmax="64.516" rmin="54.991" startphi="0" z="19.05"/>
+    <box lunit="mm" name="trussVessel_solid20x607c450" x="699.818" y="6.35" z="19.05"/>
+    <box lunit="mm" name="trussVessel_solid10x607c3d0" x="19.05" y="6.35" z="171.45"/>
+    <union name="trussVessel_solid30x607c4f0">
+      <first ref="trussVessel_solid20x607c450"/>
+      <second ref="trussVessel_solid10x607c3d0"/>
+      <position name="trussVessel_solid30x607c4f0_pos" unit="mm" x="-349.909" y="0" z="76.2"/>
+    </union>
+    <union name="trussVessel_solid50x607c810">
+      <first ref="trussVessel_solid40x607c700"/>
+      <second ref="trussVessel_solid30x607c4f0"/>
+      <position name="trussVessel_solid50x607c810_pos" unit="mm" x="-404.9" y="0" z="0"/>
+    </union>
+    <union name="trussVessel_solid60x607ca70">
+      <first ref="trussVessel_solid50x607c810"/>
+      <second ref="trussVessel_solid30x607c4f0"/>
+      <position name="trussVessel_solid60x607ca70_pos" unit="mm" x="-350.653685992319" y="202.45" z="0"/>
+      <rotation name="trussVessel_solid60x607ca70_rot" unit="deg" x="0" y="0" z="-30"/>
+    </union>
+    <union name="trussVessel_solid70x607cc80">
+      <first ref="trussVessel_solid60x607ca70"/>
+      <second ref="trussVessel_solid30x607c4f0"/>
+      <position name="trussVessel_solid70x607cc80_pos" unit="mm" x="-202.45" y="350.653685992319" z="0"/>
+      <rotation name="trussVessel_solid70x607cc80_rot" unit="deg" x="0" y="0" z="-60"/>
+    </union>
+    <union name="trussVessel_solid80x607ce90">
+      <first ref="trussVessel_solid70x607cc80"/>
+      <second ref="trussVessel_solid30x607c4f0"/>
+      <position name="trussVessel_solid80x607ce90_pos" unit="mm" x="0" y="404.9" z="0"/>
+      <rotation name="trussVessel_solid80x607ce90_rot" unit="deg" x="0" y="0" z="-90"/>
+    </union>
+    <union name="trussVessel_solid90x607d0a0">
+      <first ref="trussVessel_solid80x607ce90"/>
+      <second ref="trussVessel_solid30x607c4f0"/>
+      <position name="trussVessel_solid90x607d0a0_pos" unit="mm" x="202.45" y="350.653685992319" z="0"/>
+      <rotation name="trussVessel_solid90x607d0a0_rot" unit="deg" x="0" y="0" z="-120"/>
+    </union>
+    <union name="trussVessel_solid100x607d2b0">
+      <first ref="trussVessel_solid90x607d0a0"/>
+      <second ref="trussVessel_solid30x607c4f0"/>
+      <position name="trussVessel_solid100x607d2b0_pos" unit="mm" x="350.653685992319" y="202.45" z="0"/>
+      <rotation name="trussVessel_solid100x607d2b0_rot" unit="deg" x="0" y="0" z="-150"/>
+    </union>
+    <union name="trussVessel_solid110x607d4c0">
+      <first ref="trussVessel_solid100x607d2b0"/>
+      <second ref="trussVessel_solid30x607c4f0"/>
+      <position name="trussVessel_solid110x607d4c0_pos" unit="mm" x="404.9" y="0" z="0"/>
+      <rotation name="trussVessel_solid110x607d4c0_rot" unit="deg" x="0" y="0" z="-180"/>
+    </union>
+    <union name="trussVessel_solid120x607d6d0">
+      <first ref="trussVessel_solid110x607d4c0"/>
+      <second ref="trussVessel_solid30x607c4f0"/>
+      <position name="trussVessel_solid120x607d6d0_pos" unit="mm" x="350.653685992319" y="-202.45" z="0"/>
+      <rotation name="trussVessel_solid120x607d6d0_rot" unit="deg" x="0" y="0" z="150"/>
+    </union>
+    <union name="trussVessel_solid130x607d8e0">
+      <first ref="trussVessel_solid120x607d6d0"/>
+      <second ref="trussVessel_solid30x607c4f0"/>
+      <position name="trussVessel_solid130x607d8e0_pos" unit="mm" x="202.45" y="-350.653685992319" z="0"/>
+      <rotation name="trussVessel_solid130x607d8e0_rot" unit="deg" x="0" y="0" z="120"/>
+    </union>
+    <union name="trussVessel_solid140x607daf0">
+      <first ref="trussVessel_solid130x607d8e0"/>
+      <second ref="trussVessel_solid30x607c4f0"/>
+      <position name="trussVessel_solid140x607daf0_pos" unit="mm" x="0" y="-404.9" z="0"/>
+      <rotation name="trussVessel_solid140x607daf0_rot" unit="deg" x="0" y="0" z="90"/>
+    </union>
+    <union name="trussVessel_solid150x607dd00">
+      <first ref="trussVessel_solid140x607daf0"/>
+      <second ref="trussVessel_solid30x607c4f0"/>
+      <position name="trussVessel_solid150x607dd00_pos" unit="mm" x="-202.45" y="-350.653685992319" z="0"/>
+      <rotation name="trussVessel_solid150x607dd00_rot" unit="deg" x="0" y="0" z="60.0000000000001"/>
+    </union>
+    <union name="trussVessel_solid160x607df10">
+      <first ref="trussVessel_solid150x607dd00"/>
+      <second ref="trussVessel_solid30x607c4f0"/>
+      <position name="trussVessel_solid160x607df10_pos" unit="mm" x="-350.653685992319" y="-202.45" z="0"/>
+      <rotation name="trussVessel_solid160x607df10_rot" unit="deg" x="0" y="0" z="30.0000000000001"/>
+    </union>
+  </solids>
+
+</gdml>
