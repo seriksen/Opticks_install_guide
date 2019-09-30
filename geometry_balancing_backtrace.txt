@@ -1,0 +1,112 @@
+(gdb) bt
+#0  0x00007fffe20d12c7 in __GI_raise (sig=sig@entry=6) at ../nptl/sysdeps/unix/sysv/linux/raise.c:55
+#1  0x00007fffe20d29b8 in __GI_abort () at abort.c:90
+#2  0x00007fffe20ca0e6 in __assert_fail_base (
+    fmt=0x7fffe2225020 "%s%s%s:%u: %s%sAssertion `%s' failed.\n%n", 
+    assertion=assertion@entry=0x7fffe9c4d30c "idx < getNumNodes()", 
+    file=file@entry=0x7fffe9c4ce88 "/home/opc/opticks/npy/NCSG.cpp", line=line@entry=899, 
+    function=function@entry=0x7fffe9c4dba0 <NCSG::export_node(nnode*, unsigned int)::__PRETTY_FUNCTION__> "void NCSG::export_node(nnode*, unsigned int)") at assert.c:92
+#3  0x00007fffe20ca192 in __GI___assert_fail (assertion=0x7fffe9c4d30c "idx < getNumNodes()", 
+    file=0x7fffe9c4ce88 "/home/opc/opticks/npy/NCSG.cpp", line=899, 
+    function=0x7fffe9c4dba0 <NCSG::export_node(nnode*, unsigned int)::__PRETTY_FUNCTION__> "void NCSG::export_node(nnode*, unsigned int)") at assert.c:101
+#4  0x00007fffe9b55f22 in NCSG::export_node (this=0xa65ba50, node=0x9a98c50, idx=1073741823)
+    at /home/opc/opticks/npy/NCSG.cpp:899
+#5  0x00007fffe9b55e6f in NCSG::export_r (this=0xa65ba50, node=0x9a98c50, idx=1073741823)
+    at /home/opc/opticks/npy/NCSG.cpp:875
+#6  0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9a996e0, idx=536870911)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#7  0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9a9a170, idx=268435455)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#8  0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9a9ac00, idx=134217727)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#9  0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9a9b690, idx=67108863)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#10 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9a9c120, idx=33554431)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#11 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9a9cbb0, idx=16777215)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#12 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9a9d640, idx=8388607)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#13 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9a9e0d0, idx=4194303)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#14 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9a9eb60, idx=2097151)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#15 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9a9f5f0, idx=1048575)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#16 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9aa0080, idx=524287)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#17 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9aa0b10, idx=262143)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#18 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9aa15a0, idx=131071)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#19 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9aa2030, idx=65535)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#20 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9aa2ac0, idx=32767)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#21 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9aa3550, idx=16383)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#22 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9aa3fe0, idx=8191)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#23 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9aa4a70, idx=4095)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#24 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9aa5500, idx=2047)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#25 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9aa5f80, idx=1023)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#26 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9aa6a10, idx=511)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#27 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9aa74a0, idx=255)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#28 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9aa7f30, idx=127)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#29 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9aa89c0, idx=63)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#30 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9aa9450, idx=31)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#31 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9aa9ee0, idx=15)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#32 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9aaa970, idx=7)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#33 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9aab400, idx=3)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#34 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9aabe90, idx=1)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#35 0x00007fffe9b55ea8 in NCSG::export_r (this=0xa65ba50, node=0x9aac920, idx=0)
+    at /home/opc/opticks/npy/NCSG.cpp:879
+#36 0x00007fffe9b55d2f in NCSG::export_ (this=0xa65ba50) at /home/opc/opticks/npy/NCSG.cpp:845
+#37 0x00007fffe9b52f3a in NCSG::postchange (this=0xa65ba50) at /home/opc/opticks/npy/NCSG.cpp:162
+#38 0x00007fffe9b52ed1 in NCSG::Adopt (root=0x9aac920, config=0x0, soIdx=375, lvIdx=375)
+    at /home/opc/opticks/npy/NCSG.cpp:141
+#39 0x00007ffff4950635 in X4PhysicalVolume::convertSolid (this=0x7fffffffd110, lvIdx=375, soIdx=375, 
+    solid=0x8d6570, lvname="topTitaniumPlate_log0x607bf70", balance_deep_tree=false)
+    at /home/opc/opticks/extg4/X4PhysicalVolume.cc:605
+#40 0x00007ffff495019a in X4PhysicalVolume::convertSolids_r (this=0x7fffffffd110, pv=0xe26620, 
+    depth=10) at /home/opc/opticks/extg4/X4PhysicalVolume.cc:529
+#41 0x00007ffff494ffcc in X4PhysicalVolume::convertSolids_r (this=0x7fffffffd110, pv=0xed0a30, depth=9)
+    at /home/opc/opticks/extg4/X4PhysicalVolume.cc:506
+#42 0x00007ffff494ffcc in X4PhysicalVolume::convertSolids_r (this=0x7fffffffd110, pv=0x1146f70, 
+    depth=8) at /home/opc/opticks/extg4/X4PhysicalVolume.cc:506
+#43 0x00007ffff494ffcc in X4PhysicalVolume::convertSolids_r (this=0x7fffffffd110, pv=0x1147d80, 
+    depth=7) at /home/opc/opticks/extg4/X4PhysicalVolume.cc:506
+#44 0x00007ffff494ffcc in X4PhysicalVolume::convertSolids_r (this=0x7fffffffd110, pv=0x1148290, 
+    depth=6) at /home/opc/opticks/extg4/X4PhysicalVolume.cc:506
+#45 0x00007ffff494ffcc in X4PhysicalVolume::convertSolids_r (this=0x7fffffffd110, pv=0x11487b0, 
+    depth=5) at /home/opc/opticks/extg4/X4PhysicalVolume.cc:506
+#46 0x00007ffff494ffcc in X4PhysicalVolume::convertSolids_r (this=0x7fffffffd110, pv=0x1152630, 
+    depth=4) at /home/opc/opticks/extg4/X4PhysicalVolume.cc:506
+#47 0x00007ffff494ffcc in X4PhysicalVolume::convertSolids_r (this=0x7fffffffd110, pv=0x114ef80, 
+    depth=3) at /home/opc/opticks/extg4/X4PhysicalVolume.cc:506
+#48 0x00007ffff494ffcc in X4PhysicalVolume::convertSolids_r (this=0x7fffffffd110, pv=0x1153580, 
+    depth=2) at /home/opc/opticks/extg4/X4PhysicalVolume.cc:506
+#49 0x00007ffff494ffcc in X4PhysicalVolume::convertSolids_r (this=0x7fffffffd110, pv=0x1153730, 
+    depth=1) at /home/opc/opticks/extg4/X4PhysicalVolume.cc:506
+#50 0x00007ffff494ffcc in X4PhysicalVolume::convertSolids_r (this=0x7fffffffd110, pv=0x715170, depth=0)
+    at /home/opc/opticks/extg4/X4PhysicalVolume.cc:506
+#51 0x00007ffff494fd71 in X4PhysicalVolume::convertSolids (this=0x7fffffffd110)
+    at /home/opc/opticks/extg4/X4PhysicalVolume.cc:464
+#52 0x00007ffff494e6f9 in X4PhysicalVolume::init (this=0x7fffffffd110)
+    at /home/opc/opticks/extg4/X4PhysicalVolume.cc:167
+#53 0x00007ffff494e51e in X4PhysicalVolume::X4PhysicalVolume (this=0x7fffffffd110, ggeo=0x6f8130, 
+    top=0x715170) at /home/opc/opticks/extg4/X4PhysicalVolume.cc:151
+#54 0x000000000040523d in main (argc=7, argv=0x7fffffffdf78)
+    at /home/opc/opticks/okg4/tests/OKX4Test.cc:125
