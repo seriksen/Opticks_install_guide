@@ -1,0 +1,102 @@
+Program received signal SIGINT, Interrupt.
+0x00007fffed227969 in ExtEdge::ExtEdge (this=0x7fffffff6570, k1=44, k2=20, kface1=19, kface2=1, 
+    kvis=32767)
+    at /home/opc/opticks/externals/g4/geant4.10.04.p02/source/graphics_reps/src/BooleanProcessor.src:140
+140	  ExtEdge(int k1=0, int k2=0, int kface1=0, int kface2=0, int kvis=0) :
+(gdb) bt
+#0  0x00007fffed227969 in ExtEdge::ExtEdge (this=0x7fffffff6570, k1=44, k2=20, kface1=19, kface2=1, 
+    kvis=32767)
+    at /home/opc/opticks/externals/g4/geant4.10.04.p02/source/graphics_reps/src/BooleanProcessor.src:140
+#1  0x00007fffed21f4c6 in BooleanProcessor::takePolyhedron (this=0x7fffffff6900, p=..., dx=0, dy=0, 
+    dz=0)
+    at /home/opc/opticks/externals/g4/geant4.10.04.p02/source/graphics_reps/src/BooleanProcessor.src:489
+#2  0x00007fffed226116 in BooleanProcessor::execute (this=0x7fffffff6900, op=0, a=..., b=..., 
+    err=@0x7fffffff6a1c: 1)
+    at /home/opc/opticks/externals/g4/geant4.10.04.p02/source/graphics_reps/src/BooleanProcessor.src:2101
+#3  0x00007fffed226e8c in HepPolyhedronProcessor::execute1 (this=0x7fffffff6f30, a_poly=..., 
+    a_is=std::vector of length 12, capacity 12 = {...})
+    at /home/opc/opticks/externals/g4/geant4.10.04.p02/source/graphics_reps/src/HepPolyhedronProcessor.src:175
+#4  0x00007fffed2287ab in HepPolyhedron_exec::visit (this=0x7fffffff6ec0, 
+    a_is=std::vector of length 12, capacity 12 = {...})
+    at /home/opc/opticks/externals/g4/geant4.10.04.p02/source/graphics_reps/src/HepPolyhedronProcessor.src:135
+#5  0x00007fffed228669 in HEPVis::bijection_visitor::visit (this=0x7fffffff6ec0, a_level=11, a_is=
+    std::list = {...})
+    at /home/opc/opticks/externals/g4/geant4.10.04.p02/source/graphics_reps/src/HepPolyhedronProcessor.src:97
+#6  0x00007fffed22868f in HEPVis::bijection_visitor::visit (this=0x7fffffff6ec0, a_level=10, 
+    a_is=std::list = {...})
+    at /home/opc/opticks/externals/g4/geant4.10.04.p02/source/graphics_reps/src/HepPolyhedronProcessor.src:99
+#7  0x00007fffed22868f in HEPVis::bijection_visitor::visit (this=0x7fffffff6ec0, a_level=9, 
+    a_is=std::list = {...})
+    at /home/opc/opticks/externals/g4/geant4.10.04.p02/source/graphics_reps/src/HepPolyhedronProcessor.src:99
+#8  0x00007fffed22868f in HEPVis::bijection_visitor::visit (this=0x7fffffff6ec0, a_level=8, 
+    a_is=std::list = {...})
+    at /home/opc/opticks/externals/g4/geant4.10.04.p02/source/graphics_reps/src/HepPolyhedronProcessor.src:99
+#9  0x00007fffed22868f in HEPVis::bijection_visitor::visit (this=0x7fffffff6ec0, a_level=7, 
+    a_is=std::list = {...})
+    at /home/opc/opticks/externals/g4/geant4.10.04.p02/source/graphics_reps/src/HepPolyhedronProcessor.src:99
+#10 0x00007fffed22868f in HEPVis::bijection_visitor::visit (this=0x7fffffff6ec0, a_level=6, 
+    a_is=std::list = {...})
+    at /home/opc/opticks/externals/g4/geant4.10.04.p02/source/graphics_reps/src/HepPolyhedronProcessor.src:99
+#11 0x00007fffed22868f in HEPVis::bijection_visitor::visit (this=0x7fffffff6ec0, a_level=5, 
+    a_is=std::list = {...})
+    at /home/opc/opticks/externals/g4/geant4.10.04.p02/source/graphics_reps/src/HepPolyhedronProcessor.src:99
+#12 0x00007fffed22868f in HEPVis::bijection_visitor::visit (this=0x7fffffff6ec0, a_level=4, 
+    a_is=std::list = {...})
+    at /home/opc/opticks/externals/g4/geant4.10.04.p02/source/graphics_reps/src/HepPolyhedronProcessor.src:99
+#13 0x00007fffed22868f in HEPVis::bijection_visitor::visit (this=0x7fffffff6ec0, a_level=3, 
+    a_is=std::list = {...})
+    at /home/opc/opticks/externals/g4/geant4.10.04.p02/source/graphics_reps/src/HepPolyhedronProcessor.src:99
+#14 0x00007fffed22868f in HEPVis::bijection_visitor::visit (this=0x7fffffff6ec0, a_level=2, 
+    a_is=std::list = {...})
+    at /home/opc/opticks/externals/g4/geant4.10.04.p02/source/graphics_reps/src/HepPolyhedronProcessor.src:99
+#15 0x00007fffed22868f in HEPVis::bijection_visitor::visit (this=0x7fffffff6ec0, a_level=1, 
+    a_is=std::list = {...})
+    at /home/opc/opticks/externals/g4/geant4.10.04.p02/source/graphics_reps/src/HepPolyhedronProcessor.src:99
+#16 0x00007fffed22868f in HEPVis::bijection_visitor::visit (this=0x7fffffff6ec0, a_level=0, 
+    a_is=std::list = {...})
+    at /home/opc/opticks/externals/g4/geant4.10.04.p02/source/graphics_reps/src/HepPolyhedronProcessor.src:99
+#17 0x00007fffed228541 in HEPVis::bijection_visitor::visitx (this=0x7fffffff6ec0)
+    at /home/opc/opticks/externals/g4/geant4.10.04.p02/source/graphics_reps/src/HepPolyhedronProcessor.src:85
+#18 0x00007fffed226d3d in HepPolyhedronProcessor::execute (this=0x7fffffff6f30, a_poly=...)
+    at /home/opc/opticks/externals/g4/geant4.10.04.p02/source/graphics_reps/src/HepPolyhedronProcessor.src:151
+#19 0x00007fffed9fa8cb in G4UnionSolid::CreatePolyhedron (this=0x8dbfb0)
+    at /home/opc/opticks/externals/g4/geant4.10.04.p02/source/geometry/solids/Boolean/src/G4UnionSolid.cc:536
+#20 0x00007ffff49359dd in X4Mesh::polygonize (this=0x7fffffff79f0)
+    at /home/opc/opticks/extg4/X4Mesh.cc:154
+#21 0x00007ffff493553b in X4Mesh::init (this=0x7fffffff79f0) at /home/opc/opticks/extg4/X4Mesh.cc:119
+#22 0x00007ffff493550e in X4Mesh::X4Mesh (this=0x7fffffff79f0, solid=0x8dbfb0)
+    at /home/opc/opticks/extg4/X4Mesh.cc:109
+#23 0x00007ffff493547b in X4Mesh::Convert (solid=0x8dbfb0) at /home/opc/opticks/extg4/X4Mesh.cc:93
+#24 0x00007ffff4948f30 in X4PhysicalVolume::convertSolid (this=0x7fffffffcca0, lvIdx=377, soIdx=377, 
+    solid=0x8dbfb0, lvname="truss_log0x609f9c0", balance_deep_tree=true)
+    at /home/opc/opticks/extg4/X4PhysicalVolume.cc:703
+#25 0x00007ffff4948519 in X4PhysicalVolume::convertSolids_r (this=0x7fffffffcca0, pv=0xe2ba90, 
+    depth=10) at /home/opc/opticks/extg4/X4PhysicalVolume.cc:581
+#26 0x00007ffff49483b2 in X4PhysicalVolume::convertSolids_r (this=0x7fffffffcca0, pv=0xed5bd0, depth=9)
+    at /home/opc/opticks/extg4/X4PhysicalVolume.cc:566
+#27 0x00007ffff49483b2 in X4PhysicalVolume::convertSolids_r (this=0x7fffffffcca0, pv=0x114c330, 
+    depth=8) at /home/opc/opticks/extg4/X4PhysicalVolume.cc:566
+#28 0x00007ffff49483b2 in X4PhysicalVolume::convertSolids_r (this=0x7fffffffcca0, pv=0x114d140, 
+    depth=7) at /home/opc/opticks/extg4/X4PhysicalVolume.cc:566
+#29 0x00007ffff49483b2 in X4PhysicalVolume::convertSolids_r (this=0x7fffffffcca0, pv=0x114d650, 
+    depth=6) at /home/opc/opticks/extg4/X4PhysicalVolume.cc:566
+#30 0x00007ffff49483b2 in X4PhysicalVolume::convertSolids_r (this=0x7fffffffcca0, pv=0x114db70, 
+    depth=5) at /home/opc/opticks/extg4/X4PhysicalVolume.cc:566
+#31 0x00007ffff49483b2 in X4PhysicalVolume::convertSolids_r (this=0x7fffffffcca0, pv=0x11579f0, 
+    depth=4) at /home/opc/opticks/extg4/X4PhysicalVolume.cc:566
+#32 0x00007ffff49483b2 in X4PhysicalVolume::convertSolids_r (this=0x7fffffffcca0, pv=0x11543b0, 
+    depth=3) at /home/opc/opticks/extg4/X4PhysicalVolume.cc:566
+#33 0x00007ffff49483b2 in X4PhysicalVolume::convertSolids_r (this=0x7fffffffcca0, pv=0x1158960, 
+    depth=2) at /home/opc/opticks/extg4/X4PhysicalVolume.cc:566
+#34 0x00007ffff49483b2 in X4PhysicalVolume::convertSolids_r (this=0x7fffffffcca0, pv=0x1158ae0, 
+    depth=1) at /home/opc/opticks/extg4/X4PhysicalVolume.cc:566
+#35 0x00007ffff49483b2 in X4PhysicalVolume::convertSolids_r (this=0x7fffffffcca0, pv=0x7151b0, depth=0)
+    at /home/opc/opticks/extg4/X4PhysicalVolume.cc:566
+#36 0x00007ffff494814d in X4PhysicalVolume::convertSolids (this=0x7fffffffcca0)
+    at /home/opc/opticks/extg4/X4PhysicalVolume.cc:524
+#37 0x00007ffff4946a54 in X4PhysicalVolume::init (this=0x7fffffffcca0)
+    at /home/opc/opticks/extg4/X4PhysicalVolume.cc:188
+#38 0x00007ffff49467d0 in X4PhysicalVolume::X4PhysicalVolume (this=0x7fffffffcca0, ggeo=0x6f81e0, 
+    top=0x7151b0) at /home/opc/opticks/extg4/X4PhysicalVolume.cc:170
+#39 0x0000000000405329 in main (argc=6, argv=0x7fffffffdcd8)
+    at /home/opc/opticks/okg4/tests/OKX4Test.cc:149
