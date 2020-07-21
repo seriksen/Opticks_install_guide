@@ -39,3 +39,23 @@ But I'm always doing...
     sudo systemctl restart gdm
     /opt/TurboVNC/bin/vncserver -vgl -wm xfce4-session
 
+Log in and test
+
+.. code-block:: sh
+
+    [opc@vgl-test-321891 ~]$ glxinfo | grep -i opengl
+    OpenGL vendor string: NVIDIA Corporation
+    OpenGL renderer string: Tesla P100-SXM2-16GB/PCIe/SSE2
+    OpenGL core profile version string: 4.6.0 NVIDIA 440.56
+    OpenGL core profile shading language version string: 4.60 NVIDIA
+    OpenGL core profile context flags: (none)
+    OpenGL core profile profile mask: core profile
+    OpenGL core profile extensions:
+    OpenGL version string: 4.6.0 NVIDIA 440.56
+    OpenGL shading language version string: 4.60 NVIDIA
+    OpenGL context flags: (none)
+    OpenGL profile mask: (none)
+    OpenGL extensions:
+    OpenGL ES profile version string: OpenGL ES 3.2 NVIDIA 440.56
+    OpenGL ES profile shading language version string: OpenGL ES GLSL ES 3.20
+    OpenGL ES profile extensions:
