@@ -11,7 +11,7 @@ This guide was written for installation on Oracle Cloud Instance VMGPU2.1 using;
 * NVIDIA CUDA 11.0
 * NVIDIA OptiX 6.0
 
-To set up the instance, see the <link>
+To set up the instance, see the Instance_setup
 
 Additional information;
 
