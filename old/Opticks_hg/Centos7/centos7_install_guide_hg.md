@@ -587,6 +587,56 @@ opticks-t
 NOTE: Two tests should fail (OptiXRap tests). These are because Opticks does not currently work full with NVidia OptiX 6.0.0.
 NVidia OptiX works with 5.2.0 (but I haven't tested it)
 
+### Debugging tests
+Generally running opticks things with `-D` argument.
+
+For proper debugging, install...
+```code
+debuginfo-install expat-2.1.0-10.el7_3.x86_64 \
+                  glibc-2.17-260.el7_6.6.x86_64 \
+                  keyutils-libs-1.5.8-3.el7.x86_64 \
+                  krb5-libs-1.15.1-37.el7_6.x86_64 \
+                  libX11-1.6.5-2.el7.x86_64 \
+                  libXau-1.0.8-2.1.el7.x86_64 \
+                  libXcursor-1.1.15-1.el7.x86_64 \
+                  libXext-1.3.3-3.el7.x86_64 \
+                  libXfixes-5.0.3-1.el7.x86_64 \
+                  libXi-1.7.9-1.el7.x86_64 \
+                  libXinerama-1.1.3-2.1.el7.x86_64 \
+                  libXrandr-1.5.1-2.el7.x86_64 \
+                  libXrender-0.9.10-1.el7.x86_64 \
+                  libXxf86vm-1.1.4-1.el7.x86_64 \
+                  libcom_err-1.42.9-13.el7.x86_64 \
+                  libgcc-4.8.5-36.el7_6.2.x86_64 \
+                  libglvnd-1.0.1-0.8.git5baa1e5.el7.x86_64 \
+                  libglvnd-glx-1.0.1-0.8.git5baa1e5.el7.x86_64 \
+                  libselinux-2.5-14.1.el7.x86_64 \
+                  libstdc++-4.8.5-36.el7_6.2.x86_64 \
+                  libxcb-1.13-1.el7.x86_64 \
+                  openssl-libs-1.0.2k-16.el7_6.1.x86_64 \
+                  pcre-8.32-17.el7.x86_64 \
+                  zlib-1.2.7-18.el7.x86_64
+```
+
+debuginfo-install krb5-libs-1.15.1-37.el7_7.2.x86_64 libcom_err-1.42.9-16.el7.x86_64 openssl-libs-1.0.2k-19.el7.x86_64
+
+## Using your own geometry
+To get the LZ geometry, we firstly need to get the lz geometry (a gdml file).
+eg `https://lz-git.ua.edu/sim/BACCARAT/-/jobs/54378/artifacts/file/output/geometry.gdml`
+Alternatively, in the LZ software docs there are instructions on getting geometry gdml file from a BACCARAT macro command.
+
+Get this on the gpu instance under `/home/opc/LZ/lz_geometry.gdml`
+
+Now comment out the OPTICKS_KEY as this refers to the wrong geometry.
+
+Now we must convert this into GPU compatable numpy.
+We should be able to do this via `geocache-` functions, however for testing purposes we can skip the middle man and just do ...
+` o.sh --okx4 --g4codegen --deletegeocache --gdmlpath /home/opc/LZ/lz_geometry.gdml -D`.
+THe `-D` is for debug.
+
+This just runs `OKX4Test --g4codegen --deletegeocache --gdmlpath /home/opc/LZ/lz_geometry.gdml -D` so this can be done instead
+
+
 ## Visualisation
 To view geometry in Opticks, do the patches in visualisation_edits.patch and then run `op.sh`
 
