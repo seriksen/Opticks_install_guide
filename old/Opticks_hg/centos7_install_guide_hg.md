@@ -586,3 +586,13 @@ opticks-t
 
 NOTE: Two tests should fail (OptiXRap tests). These are because Opticks does not currently work full with NVidia OptiX 6.0.0.
 NVidia OptiX works with 5.2.0 (but I haven't tested it)
+
+## Visualisation
+To view geometry in Opticks, do the patches in visualisation_edits.patch and then run `op.sh`
+
+## Using your own geometry
+Run 
+```code
+OKX4Test --gdmlpath <path>
+```
+and add the Opticks Key output from that to bash script
