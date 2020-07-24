@@ -14,8 +14,10 @@ This guide was written for installation on Oracle Cloud Instance VMGPU2.1 using;
 To set up the instance, see the Instance_setup
 
 Additional information;
-
-* I've tried to give the instructions for using just opticks bash functions and for not using them where practical
+Although Opticks does have bash functions which install all of the functions which has some benifits, it is best to try
+and keep all of the externals separate.
+In this guide, I've put all of the externals for opticks in a directory called :code:`opticks_externals`.
+This is in preparation of minimising what is actually in Opticks.
 
 .. contents:: Contents
 
@@ -54,14 +56,19 @@ Install some things that we will need later
                         freeglut-devel \
                         freeglut \
                         expat-devel \
-                        doxygen
-
-.
+                        doxygen \
+                        libXmu-devel \
+                        libXi-devel \
+                        libGL-devel
 
 #######
 Opticks
 #######
-Get opticks
+Opticks as a package, is actually a bunch of smaller CMake projects.
+These are linked using CMake 'find_package' and boost cmake modules (bcm)
+
+Get Opticks
+===========
 
 .. code-block:: sh
 
@@ -78,32 +85,41 @@ Add the following to :code:`custom_opticks_setup.sh` to make interacting with Op
     opticks-
     export PATH=${OPTICKS_HOME}/bin:${OPTICKS_HOME}/ana:${LOCAL_BASE}/opticks/lib${PATH:+:${PATH}}
     export OPTICKS_PREFIX=/home/opc/opticks # opticks will put things in opticks_externals
+    export OPTICKS_EXTERNALS=/home/opc/opticks_externals
 
 
 Now go through installing the needed bits. So see what opticks actually needs, run :code:`opticks-info`
 After installing things, rerun opticks-info to check opticks variables and requirements are met.
 
+Opticks Externals
+=================
+Opticks has many external dependencies;
+
+* cmake (3.14+)
+* boost (1.59+)
+* bcm
+* glm
+* glfw
+* glew
+* gleq
+* imgui
+* assimp
+* openmesh
+* plog
+* opticksaux
+* oimplicitmesher
+* odcs
+* oyoctogl
+* ocsgbsp
+* xercesc
+* geant4
+
 cmake
-=====
-What's required? cmake 3.14+.
-
-Opticks bash functions
-----------------------
-Install cmake by;
-
-.. code-block:: sh
-
-    ocmake-
-    ocmake-info
-    ocmake--
-
-Direct
-------
-
+-----
 .. code-block:: sh
 
     cmake_ver=3.14.1
-    dir=/home/opc/opticks_externals/cmake
+    dir=${OPTICKS_EXTERNALS}/cmake
     mkdir -p ${dir}
     cd ${dir}
     url=https://github.com/Kitware/CMake/releases/download/v${cmake_ver}/cmake-${cmake_ver}.tar.gz
@@ -115,33 +131,105 @@ Direct
     sudo make install
 
 boost
-=====
-What's required? Boost v 1.59+
-
-Opticks bash
-------------
+-----
 .. code-block:: sh
 
-    boost-
-    boost--
-
-Direct
-------
-.. code-block:: sh
-
-    boost_v0=1.70.0
-    boost_ver=1_17_0
-    dir=/home/opc/boost
+    boost_ver=1.70.0
+    boost_name=boost_${boost_ver//./_}
+    dir=${OPTICKS_EXTERNALS}/boost
     mkdir -p ${dir}
     cd ${dir}
-    url=http://downloads.sourceforge.net/project/boost/boost/${boost_v0}/boost_${boost_ver}.tar.gz
+    url=http://downloads.sourceforge.net/project/boost/boost/${boost_ver}/${boost_name}.tar.gz
     curl -L -O ${url}
-    tar zxvf boost_${boost_ver}.tar.gz
-    cd boost_${boost_ver}
-    ./bootstrap.sh
-    ./b2 install
+    tar zxf ${boost_name}.tar.gz
+    cd ${boost_name}
+    ./bootstrap.sh --prefix=${dir}
+    ./b2 --prefix=${dir} --build-dir=${dir}/${boost_name}.build --with-system --with-thread --with-program_options --with-log --with-filesystem --with-regex install
 
-(or for boost 1.53, :code:`sudo yum install boost`)
+bcm
+---
+.. code-block:: sh
+
+    dir=${OPTICKS_EXTERNALS}/bcm
+    mkdir -p $dir
+    cd $dir
+    url=http://github.com/simoncblyth/bcm.git
+    git clone $url
+    mkdir ${dir}/bcm.build
+    cd ${dir}/bcm.build
+    cmake ../bcm -DCMAKE_INSTALL_PREFIX=${OPTICKS_EXTERNALS}
+    cmake --build . --target install
+
+glm
+---
+.. code-block:: sh
+
+    glm_ver=0.9.9.5
+    glm_name=glm-${glm_ver}
+    dir=${OPTICKS_EXTERNALS}/glm
+    mkdir -p $dir
+    cd $dir
+    url=https://github.com/g-truc/glm/releases/download/${glm_ver}/${glm_name}.zip
+    curl -L -O $url
+    unzip ${glm_name}.zip -d ${glm_name}
+
+Then point to Opticks (these steps should change).
+Add to :code:`/home/opc/opticks/externals/lib/pkgconfig/GLM.pc` and fill with.
+.. code-block:: sh
+
+    prefix=/home/opc/opticks
+    includedir=${prefix}_externals/glm/glm
+
+    Name: GLM
+    Description: Mathematics
+    Version: 0.1.0
+
+    Cflags:  -I${includedir}
+    Libs: -lstdc++
+    Requires:
+
+glfw
+----
+.. code-black:: sh
+
+    glfw_ver=3.3.2
+    dir=${OPTICKS_EXTERNALS}/glfw
+    mkdir -p $dir
+    cd $dir
+    url=https://github.com/glfw/glfw/releases/download/${glfw_ver}/glfw-${glfw_ver}.zip
+    curl -L -O $url
+    unzip glfw-${glfw_ver}.zip
+    mkdir ${dir}/glfw-${glfw_ver}.build
+    cd ${dir}/glfw-${glfw_ver}.build
+    cmake -G "Unix Makefiles" \
+          -DBUILD_SHARED_LIBS=ON \
+          -DDOpenGL_GL_PREFERENCE=LEGACY \
+          -DCMAKE_INSTALL_PREFIX=${dir} \
+          ../glfw-${glfw_ver}
+    cmake --build . --config Debug --target install
+    cp ${OPTICKS_EXTERNALS}/glfw/lib64/pkgconfig/glfw3.pc /home/opc/opticks/externals/lib/pkgconfig/OpticksGLFW.pc
+
+glew
+----
+OpenGL extension.
+The basic instructions are on the projects github: https://github.com/nigels-com/glew
+Requires :code:`sudo yum install libXmu-devel libXi-devel libGL-devel`
+
+.. code-block:: sh
+
+    glew_ver=2.1.0
+    dir=${OPTICKS_EXTERNALS}/glew
+    mkdir -p $dir
+    cd $dir
+    url=http://downloads.sourceforge.net/project/glew/glew/${glew_ver}/glew-${glew_ver}.zip
+    curl -L -O $url
+    unzip glew-${glew_ver}.zip
+    cd glew-${glew_ver}
+    builddir=${dir}/glew-${glew_ver}.build
+    make install GLEW_PREFIX=${builddir} GLEW_DEST=${builddir} LIBDIR=${builddir}/lib
+    cp ${builddir}/lib/pkgconfig/glew.pc /home/opc/opticks/externals/lib/pkgconfig/OpticksGLEW.pc
+
+
 
 Opticks Externals
 =================
@@ -151,7 +239,7 @@ bcm
 glm
 glfw
 glew
-gleq
+gleq -
 imgui
 assimp
 openmesh
