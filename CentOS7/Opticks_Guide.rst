@@ -174,11 +174,12 @@ glm
     unzip ${glm_name}.zip -d ${glm_name}
 
 Then point to Opticks (these steps should change).
+Do :code:`mkdir -p /home/opc/opticks/externals/lib/pkgconfig/`
 Add to :code:`/home/opc/opticks/externals/lib/pkgconfig/GLM.pc` and fill with.
 .. code-block:: sh
 
-    prefix=/home/opc/opticks
-    includedir=${prefix}_externals/glm/glm
+    prefix=/home/opc/opticks_externals
+    includedir=${prefix}/glm/glm
 
     Name: GLM
     Description: Mathematics
@@ -228,6 +229,44 @@ Requires :code:`sudo yum install libXmu-devel libXi-devel libGL-devel`
     builddir=${dir}/glew-${glew_ver}.build
     make install GLEW_PREFIX=${builddir} GLEW_DEST=${builddir} LIBDIR=${builddir}/lib
     cp ${builddir}/lib/pkgconfig/glew.pc /home/opc/opticks/externals/lib/pkgconfig/OpticksGLEW.pc
+
+gleq
+----
+Event Queue for GLFW.
+It is just a header file.
+This is already in opticks/oglrap/gleq.h ... so is it needed as an external here? Should refer to this version if wanted
+
+.. code-block:: sh
+
+    dir=${OPTICKS_EXTERNALS}/gleq
+    mkdir -p $dir
+    cd $dir
+    git clone https://github.com/glfw/gleq.git
+
+imgui
+-----
+Graphical UI library for C++.
+Has a different CMakeList. Why?
+
+.. code-block:: sh
+
+    dir=${OPTICKS_EXTERNALS}/imgui
+    mkdir -p $dir
+    cd $dir
+    url=http://github.com/simoncblyth/imgui.git
+    git clone $url
+    mkdir imgui.build
+    cd imgui.build
+    cmake -G "Unix Makefiles" \
+          -DOPTICKS_PREFIX=/home/opc/opticks \
+          -DCMAKE_INSTALL_PREFIX=${dir} \
+          -DCMAKE_MODULE_PATH=${OPTICKS_EXTERNALS}/cmake/Modules \
+          -DCMAKE_PREFIX_PATH=/home/opc/opticks/externals \
+          -DCMAKE_BUILD_TYPE=Debug \
+          ${dir}/imgui
+
+
+TODO: Change Opticks cmake Finds to use different variable so don't have to be saved in $Opticks_prefix / externals
 
 
 
