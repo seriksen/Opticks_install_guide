@@ -5,6 +5,8 @@ Opticks requires OpenGL 4.0 or greater.
 Using GPU in compute mode (which is how they are in clusters) means that there isn't any hardware acceleration.
 We can get around this using virtualGL and turboVNC.
 These require the NVIDIA grid GPU version (see NVIDIA_Externals)
+For details as to what is actually being done see
+https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-product-literature/remote-viz-tesla-gpus.pdf
 
 .. code-block:: sh
 
