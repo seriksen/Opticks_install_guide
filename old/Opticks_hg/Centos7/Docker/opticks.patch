@@ -1,0 +1,125 @@
+diff -r 592b48970ac5 cmake/Modules/FindOptiX.cmake
+--- a/cmake/Modules/FindOptiX.cmake	Wed Dec 19 11:49:17 2018 +0800
++++ b/cmake/Modules/FindOptiX.cmake	Tue Jan 15 11:10:06 2019 +0000
+@@ -39,6 +39,12 @@
+   set(bit_dest "")
+ endif()
+ 
++
++if (DEFINED ENV{OptiX_INSTALL_DIR})
++    set(OptiX_INSTALL_DIR $ENV{OptiX_INSTALL_DIR})
++endif()
++
++
+ macro(OPTIX_find_api_library name version)
+   find_library(${name}_LIBRARY
+     NAMES ${name}.${version} ${name}
+diff -r 592b48970ac5 externals/glfw.bash
+--- a/externals/glfw.bash	Wed Dec 19 11:49:17 2018 +0800
++++ b/externals/glfw.bash	Tue Jan 15 11:10:06 2019 +0000
+@@ -293,7 +293,7 @@
+    mv glfw3.pc GLFW3.pc
+ }
+ 
+-glfw-version(){ echo 3.1.1 ; }
++glfw-version(){ echo 3.2.1 ; }
+ glfw-name(){ echo glfw-$(glfw-version) ; }
+ glfw-url(){  echo http://downloads.sourceforge.net/project/glfw/glfw/$(glfw-version)/$(glfw-name).zip ; }
+ glfw-dist(){ echo $(dirname $(glfw-dir))/$(basename $(glfw-url)) ; }
+diff -r 592b48970ac5 okconf/OKConf_Config.hh.in
+--- a/okconf/OKConf_Config.hh.in	Wed Dec 19 11:49:17 2018 +0800
++++ b/okconf/OKConf_Config.hh.in	Tue Jan 15 11:10:06 2019 +0000
+@@ -26,6 +26,10 @@
+ #cmakedefine OXRAP_OPTIX_VERSION @OXRAP_OPTIX_VERSION@
+ #cmakedefine CFG4_G4VERSION_NUMBER @CFG4_G4VERSION_NUMBER@
+ 
++#define OXRAP_OPTIX_VERSION_MAJOR OXRAP_OPTIX_VERSION / 10000
++#define OXRAP_OPTIX_VERSION_MINOR (OXRAP_OPTIX_VERSION % 10000) / 100
++#define OXRAP_OPTIX_VERSION_MICRO OXRAP_OPTIX_VERSION % 100
+ 
+ 
+ 
++
+diff -r 592b48970ac5 optickscore/OpticksBufferSpec.cc
+--- a/optickscore/OpticksBufferSpec.cc	Wed Dec 19 11:49:17 2018 +0800
++++ b/optickscore/OpticksBufferSpec.cc	Tue Jan 15 11:10:06 2019 +0000
+@@ -72,7 +72,8 @@
+ 
+ **/
+ 
+-#if OXRAP_OPTIX_VERSION == 3080 || OXRAP_OPTIX_VERSION == 3090 
++
++#if OXRAP_OPTIX_VERSION_MAJOR == 3
+ 
+ #ifdef WITH_SEED_BUFFER
+ const char* OpticksBufferSpec::photon_compute_ = "OPTIX_OUTPUT_ONLY"  ;
+@@ -82,7 +83,7 @@
+ const char* OpticksBufferSpec::photon_interop_ = "OPTIX_INPUT_OUTPUT,BUFFER_COPY_ON_DIRTY,INTEROP_PTR_FROM_OPENGL"  ;
+ #endif
+ 
+-#elif OXRAP_OPTIX_VERSION == 400000 || OXRAP_OPTIX_VERSION == 40000 ||  OXRAP_OPTIX_VERSION == 40101 || OXRAP_OPTIX_VERSION == 50001 || OXRAP_OPTIX_VERSION == 50100
++#elif OXRAP_OPTIX_VERSION_MAJOR == 4 ||OXRAP_OPTIX_VERSION_MAJOR == 5
+ 
+ #ifdef WITH_SEED_BUFFER
+ const char* OpticksBufferSpec::photon_compute_ = "OPTIX_OUTPUT_ONLY"  ;
+@@ -92,34 +93,42 @@
+ const char* OpticksBufferSpec::photon_interop_ = "OPTIX_INPUT_OUTPUT,INTEROP_PTR_FROM_OPENGL,BUFFER_COPY_ON_DIRTY"  ;
+ #endif
+ 
+-#endif
++#else
++#warning Unknown version of Optix: OXRAP_OPTIX_VERSION
++#endif // Check OXRAP_OPTIX_VERSION
+ 
+ 
+-#if OXRAP_OPTIX_VERSION == 3080 || OXRAP_OPTIX_VERSION == 3090 
++#if OXRAP_OPTIX_VERSION_MAJOR == 3
+ 
+ const char* OpticksBufferSpec::genstep_compute_ = "OPTIX_NON_INTEROP,OPTIX_INPUT_ONLY"  ;
+ const char* OpticksBufferSpec::genstep_interop_ = "OPTIX_INPUT_ONLY"  ; 
+ 
+-#elif OXRAP_OPTIX_VERSION == 400000 || OXRAP_OPTIX_VERSION == 40000 ||  OXRAP_OPTIX_VERSION == 40101 || OXRAP_OPTIX_VERSION == 50001 || OXRAP_OPTIX_VERSION == 50100
++#elif OXRAP_OPTIX_VERSION_MAJOR == 4 ||OXRAP_OPTIX_VERSION_MAJOR == 5
+ 
+ const char* OpticksBufferSpec::genstep_compute_ = "OPTIX_INPUT_ONLY,UPLOAD_WITH_CUDA,BUFFER_COPY_ON_DIRTY,VERBOSE_MODE"  ;
+ const char* OpticksBufferSpec::genstep_interop_ = "OPTIX_INPUT_ONLY"  ; 
+ 
+-#endif
++#else
++#warning Unknown version of Optix: OXRAP_OPTIX_VERSION
++#endif // Check OXRAP_OPTIX_VERSION
+ 
+ 
+ 
+-#if OXRAP_OPTIX_VERSION == 3080 || OXRAP_OPTIX_VERSION == 3090 
++
++#if OXRAP_OPTIX_VERSION_MAJOR == 3
+ 
+ const char* OpticksBufferSpec::source_compute_ = "OPTIX_NON_INTEROP,OPTIX_INPUT_ONLY"  ;
+ const char* OpticksBufferSpec::source_interop_ = "OPTIX_INPUT_ONLY"  ; 
+ 
+-#elif OXRAP_OPTIX_VERSION == 400000 || OXRAP_OPTIX_VERSION == 40000 ||  OXRAP_OPTIX_VERSION == 40101 || OXRAP_OPTIX_VERSION == 50001 || OXRAP_OPTIX_VERSION == 50100
++#elif OXRAP_OPTIX_VERSION_MAJOR == 4 ||OXRAP_OPTIX_VERSION_MAJOR == 5
+ 
+ const char* OpticksBufferSpec::source_compute_ = "OPTIX_INPUT_ONLY,UPLOAD_WITH_CUDA,BUFFER_COPY_ON_DIRTY,VERBOSE_MODE"  ;
+ const char* OpticksBufferSpec::source_interop_ = "OPTIX_INPUT_ONLY"  ; 
+ 
+-#endif
++#else
++#warning Unknown version of Optix: OXRAP_OPTIX_VERSION
++#endif // Check OXRAP_OPTIX_VERSION
++
+ 
+ 
+ 
+diff -r 592b48970ac5 optixrap/OConfig.cc
+--- a/optixrap/OConfig.cc	Wed Dec 19 11:49:17 2018 +0800
++++ b/optixrap/OConfig.cc	Tue Jan 15 11:10:06 2019 +0000
+@@ -45,6 +45,7 @@
+        case 40101: with_top = false ;break;      
+        case 50001: with_top = false ;break;      
+        case 50100: with_top = false ;break;      
++       case 50101: with_top = false ;break;      
+        default: assert(0 && "unexpected OPTIX_VERSION") ;break;
+     }
+ /*
