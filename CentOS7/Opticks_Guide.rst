@@ -74,29 +74,7 @@ Add execution to :code:`.bashrc` at the top of the file.
 
 Opticks Externals
 =================
-Opticks has many externals (as of writing this the documentation of Opticks still isn't ideal for this...)
 In this guide, as much as possible will be put into a directory :code:`opticks_externals`.
-
-Opticks has many external dependencies;
-
-* cmake (3.14+)
-* boost (1.59+)
-* bcm
-* glm
-* glfw
-* glew
-* gleq
-* imgui
-* assimp
-* openmesh
-* plog
-* opticksaux
-* oimplicitmesher
-* odcs
-* oyoctogl
-* ocsgbsp
-* xercesc
-* geant4
 
 cmake
 -----
