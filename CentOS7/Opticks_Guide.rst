@@ -186,6 +186,7 @@ This is not the end of the external packages, but the remainder are smaller and 
 Set locations in :code:`opticks_config.sh`.
 
 Then edits to cmake.
+NOTE: If pulled from my fork, edits aren't needed.
 
 FindG4.cmake
 ------------
