@@ -145,7 +145,8 @@ xcerses
 Geant4
 ------
 Note, in order to use G4.10.06 needs gcc 4.9.3+.
-Defaul is likely to be 4.8.5 (CentOS7)
+Defaul is likely to be 4.8.5 (CentOS7).
+Earlier versions are fine with 4.8.5.
 
 .. code-block:: sh
 
