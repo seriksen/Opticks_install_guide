@@ -224,7 +224,11 @@ This will output something at the end like
     2020-10-04 19:14:28.028 INFO  [9633] [Opticks::reportGeoCacheCoordinates@1005]  (live)   OPTICKS_KEY=OKX4Test.X4PhysicalVolume.World0xc15cfc00x40f7000_PV.5aa828335373870398bf4f738781da6c
 
 Add the :code:`OPTICKS_KEY` to the :code:`opticks_config.sh` script.
-:code:`export OPTICKS_KEY=OKX4Test.X4PhysicalVolume.World0xc15cfc00x40f7000_PV.5aa828335373870398bf4f738781da6c`
+
+.. code-block:: sh
+
+    export OPTICKS_KEY=OKX4Test.X4PhysicalVolume.World0xc15cfc00x40f7000_PV.5aa828335373870398bf4f738781da6c
+    export OPTICKS_KEYDIR=$(opticks-keydir) # Haven't checked if this is actually needed
 
 In this guide, the geocache will be created in :code:`${HOME}/.opticks/geocache`.
 
