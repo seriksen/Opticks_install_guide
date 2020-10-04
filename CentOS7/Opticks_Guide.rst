@@ -37,7 +37,8 @@ Install some things that we will need later
                         libXmu-devel \
                         libXi-devel \
                         libGL-devel \
-                        curl-devel
+                        curl-devel \ # for cmake
+                        openssl-devel # for sysrap
 
 Could also do (to avoid later...)
 
@@ -203,163 +204,24 @@ Opticks Full
 ============
 This is not the end of the external packages, but the remainder are smaller and are installed as part of :code:`opticks-full`.
 
+Set locations in :code:`opticks_config.sh`.
+
+Then edits to cmake.
+
+FindG4.cmake
+------------
+Edit line 46 to be; :code:`list(GET _dirs 30 _firstdir)`
+
+Edit line 100 to be; :code:`PATHS "${G4_DIR}/lib64")`
 
 
+FindOpticksXercesC.cmake
+------------------------
+Edit line 98 to be; :code:`/home/opc/opticks_externals/xerces/build/include`
+
+Edit line 114 to be; :code:`/home/opc/opticks_externals/xerces/build/lib`
 
 
-
-
-
-
-bcm
----
-.. code-block:: sh
-
-    dir=${OPTICKS_EXTERNALS}/bcm
-    mkdir -p $dir
-    cd $dir
-    url=http://github.com/simoncblyth/bcm.git
-    git clone $url
-    mkdir ${dir}/bcm.build
-    cd ${dir}/bcm.build
-    cmake ../bcm -DCMAKE_INSTALL_PREFIX=${OPTICKS_EXTERNALS}
-    cmake --build . --target install
-
-glm
----
-.. code-block:: sh
-
-    glm_ver=0.9.9.5
-    glm_name=glm-${glm_ver}
-    dir=${OPTICKS_EXTERNALS}/glm
-    mkdir -p $dir
-    cd $dir
-    url=https://github.com/g-truc/glm/releases/download/${glm_ver}/${glm_name}.zip
-    curl -L -O $url
-    unzip ${glm_name}.zip -d ${glm_name}
-
-Then point to Opticks (these steps should change).
-Do :code:`mkdir -p /home/opc/opticks/externals/lib/pkgconfig/`
-Add to :code:`/home/opc/opticks/externals/lib/pkgconfig/GLM.pc` and fill with.
-.. code-block:: sh
-
-    prefix=/home/opc/opticks_externals
-    includedir=${prefix}/glm/glm
-
-    Name: GLM
-    Description: Mathematics
-    Version: 0.1.0
-
-    Cflags:  -I${includedir}
-    Libs: -lstdc++
-    Requires:
-
-glfw
-----
-.. code-black:: sh
-
-    glfw_ver=3.3.2
-    dir=${OPTICKS_EXTERNALS}/glfw
-    mkdir -p $dir
-    cd $dir
-    url=https://github.com/glfw/glfw/releases/download/${glfw_ver}/glfw-${glfw_ver}.zip
-    curl -L -O $url
-    unzip glfw-${glfw_ver}.zip
-    mkdir ${dir}/glfw-${glfw_ver}.build
-    cd ${dir}/glfw-${glfw_ver}.build
-    cmake -G "Unix Makefiles" \
-          -DBUILD_SHARED_LIBS=ON \
-          -DDOpenGL_GL_PREFERENCE=LEGACY \
-          -DCMAKE_INSTALL_PREFIX=${dir} \
-          ../glfw-${glfw_ver}
-    cmake --build . --config Debug --target install
-    cp ${OPTICKS_EXTERNALS}/glfw/lib64/pkgconfig/glfw3.pc /home/opc/opticks/externals/lib/pkgconfig/OpticksGLFW.pc
-
-glew
-----
-OpenGL extension.
-The basic instructions are on the projects github: https://github.com/nigels-com/glew
-Requires :code:`sudo yum install libXmu-devel libXi-devel libGL-devel`
-
-.. code-block:: sh
-
-    glew_ver=2.1.0
-    dir=${OPTICKS_EXTERNALS}/glew
-    mkdir -p $dir
-    cd $dir
-    url=http://downloads.sourceforge.net/project/glew/glew/${glew_ver}/glew-${glew_ver}.zip
-    curl -L -O $url
-    unzip glew-${glew_ver}.zip
-    cd glew-${glew_ver}
-    builddir=${dir}/glew-${glew_ver}.build
-    make install GLEW_PREFIX=${builddir} GLEW_DEST=${builddir} LIBDIR=${builddir}/lib
-    cp ${builddir}/lib/pkgconfig/glew.pc /home/opc/opticks/externals/lib/pkgconfig/OpticksGLEW.pc
-
-gleq
-----
-Event Queue for GLFW.
-It is just a header file.
-This is already in opticks/oglrap/gleq.h ... so is it needed as an external here? Should refer to this version if wanted
-
-.. code-block:: sh
-
-    dir=${OPTICKS_EXTERNALS}/gleq
-    mkdir -p $dir
-    cd $dir
-    git clone https://github.com/glfw/gleq.git
-
-imgui
------
-Graphical UI library for C++.
-Has a different CMakeList. Why?
-
-.. code-block:: sh
-
-    dir=${OPTICKS_EXTERNALS}/imgui
-    mkdir -p $dir
-    cd $dir
-    url=http://github.com/simoncblyth/imgui.git
-    git clone $url
-    mkdir imgui.build
-    cd imgui.build
-    cmake -G "Unix Makefiles" \
-          -DOPTICKS_PREFIX=/home/opc/opticks \
-          -DCMAKE_INSTALL_PREFIX=${dir} \
-          -DCMAKE_MODULE_PATH=${OPTICKS_EXTERNALS}/cmake/Modules \
-          -DCMAKE_PREFIX_PATH=/home/opc/opticks/externals \
-          -DCMAKE_BUILD_TYPE=Debug \
-          ${dir}/imgui
-
-
-TODO: Change Opticks cmake Finds to use different variable so don't have to be saved in $Opticks_prefix / externals
-
-
-
-Opticks Externals
-=================
-List of externals (excluding the above + NVIDIA)
-
-bcm
-glm
-glfw
-glew
-gleq -
-imgui
-assimp
-openmesh
-plog
-opticksaux
-oimplicitmesher
-odcs
-oyoctogl
-ocsgbsp
-
-opticks-optionals-install installs...
-
-* boost
-* clhep
-* xercesc
-* geant4
 
 
 
