@@ -80,12 +80,14 @@ Can also check by :code:`nvidia-smi`
 
 Nvidia Cuda
 -----------
-Cuda 11
+See `download page <https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=CentOS&target_version=7&target_type=rpmlocal>`_.
+
+Cuda 11.1.0
 
 .. code-block:: sh
 
-    wget http://developer.download.nvidia.com/compute/cuda/11.0.1/local_installers/cuda-repo-rhel7-11-0-local-11.0.1_450.36.06-1.x86_64.rpm
-    sudo rpm -i cuda-repo-rhel7-11-0-local-11.0.1_450.36.06-1.x86_64.rpm
+    wget https://developer.download.nvidia.com/compute/cuda/11.1.0/local_installers/cuda-repo-rhel7-11-1-local-11.1.0_455.23.05-1.x86_64.rpm
+    sudo rpm -i cuda-repo-rhel7-11-1-local-11.1.0_455.23.05-1.x86_64.rpm
     sudo yum clean all
     sudo yum -y install nvidia-driver-latest-dkms cuda
     sudo yum -y install cuda-drivers
@@ -94,26 +96,26 @@ TODO: Add test
 
 Nvidia OptiX
 ------------
-To get OptiX requires an account with the NVIDIA developer program https://developer.nvidia.com/optix.
+To get OptiX requires an account with the `NVIDIA developer program <https://developer.nvidia.com/optix>`_.
 An account is free.
 Once you have an account, download the bash script from the address above.
 Here are the instructions for OptiX 6.0.
-Upload/download to oci instance.
+Upload/download to oci instance (easier and faster if using TurboVNC for this).
 Now run the script to install the instance.
 
 .. code-block:: sh
 
     # Install OptiX
-    [opc@bristollz OptiX]$ sh NVIDIA-OptiX-SDK-6.0.0-linux64-25650775.sh
+    [opc@bristollz OptiX]$ sh NVIDIA-OptiX-SDK-6.5.0-linux64-25650775.sh
     Do you accept the license? [yN]:
     y
     By default the NVIDIA OptiX will be installed in:
-    "/home/ubuntu/OptiX/NVIDIA-OptiX-SDK-6.0.0-linux64"
-    Do you want to include the subdirectory NVIDIA-OptiX-SDK-6.0.0-linux64?
-    Saying no will install in: "/home/opc/OptiX" [Yn]:
+      "/home/opc/NVIDIA/NVIDIA-OptiX-SDK-6.5.0-linux64"
+    Do you want to include the subdirectory NVIDIA-OptiX-SDK-6.5.0-linux64?
+    Saying no will install in: "/home/opc/NVIDIA" [Yn]:
     y
 
-    Using target directory: /home/opc/OptiX/NVIDIA-OptiX-SDK-6.0.0-linux64
+    Using target directory: /home/opc/NVIDIA/NVIDIA-OptiX-SDK-6.5.0-linux64
     Extracting, please wait...
 
     Unpacking finished successfully
@@ -122,6 +124,7 @@ Now verify the installation
 
 .. code-block:: sh
 
+    sudo yum install freeglut
     # Verify OptiX
     cd NVIDIA-OptiX-SDK-6.0.0-linux64/SDK-precompiled-samples/
     export LD_LIBRARY_PATH=${PWD}:+:${LD_LIBRARY_PATH}

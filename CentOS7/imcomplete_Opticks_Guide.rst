@@ -8,16 +8,39 @@ This guide was written for installation on Oracle Cloud Instance VMGPU2.1 using;
 
 * Tesla P100 GPU
 * NVIDIA Grid (gpu driver)
-* NVIDIA CUDA 11.1.0
-* NVIDIA OptiX 6.5.0
+* NVIDIA CUDA 11.0
+* NVIDIA OptiX 6.0
 
 To set up the instance, see the Instance_setup
+
+Additional information;
+Although Opticks does have bash functions which install all of the functions which has some benifits, it is best to try
+and keep all of the externals separate.
+In this guide, I've put all of the externals for opticks in a directory called :code:`opticks_externals`.
+This is in preparation of minimising what is actually in Opticks.
 
 .. contents:: Contents
 
 ###
 Pre
 ###
+Setup script
+============
+Create a setup script :code:`custom_opticks_setup.sh`.
+Add cuda path and OptiX path PATH and LD_LIBRARY_PATH
+
+.. code-block:: sh
+
+    # CUDA
+    export PATH=/usr/local/cuda-11.0/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+    # OptiX
+    export LD_LIBRARY_PATH=/home/opc/OptiX/NVIDIA-OptiX-SDK-6.0.0-linux64/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+Add execution to :code:`.bashrc` at the top of the file.
+
+sudo yumming
+============
 Install some things that we will need later
 
 .. code-block:: sh
@@ -36,14 +59,7 @@ Install some things that we will need later
                         doxygen \
                         libXmu-devel \
                         libXi-devel \
-                        libGL-devel \
-                        curl-devel
-
-Could also do (to avoid later...)
-
-.. code-block:: sh
-
-    sudo yum install xerces-c xerces-c-devel # But I didn't in this install
+                        libGL-devel
 
 #######
 Opticks
@@ -58,24 +74,25 @@ Get Opticks
 
     git clone git@bitbucket.org:SamEriksen/opticks.git
 
-
-Config Script
-=============
-In order to use opticks, several enviromental variables need to be set.
-An example script is at :code:`opticks/example.opticks_config` and may be a good starting point.
-Copy the script and source in bashrc.
-Add execution to :code:`.bashrc` at the top of the file.
+Add the following to :code:`custom_opticks_setup.sh` to make interacting with Opticks easier
 
 .. code-block:: sh
 
-    cp opticks/example.opticks_config ~/opticks_config.sh
+    # Opticks
+    export PYTHONPATH=${HOME}
+    export OPTICKS_HOME=${HOME}/opticks
+    opticks-(){ [ -r $OPTICKS_HOME/opticks.bash ] && . $OPTICKS_HOME/opticks.bash && opticks-env $* ; }
+    opticks-
+    export PATH=${OPTICKS_HOME}/bin:${OPTICKS_HOME}/ana:${LOCAL_BASE}/opticks/lib${PATH:+:${PATH}}
+    export OPTICKS_PREFIX=/home/opc/opticks # opticks will put things in opticks_externals
+    export OPTICKS_EXTERNALS=/home/opc/opticks_externals
 
+
+Now go through installing the needed bits. So see what opticks actually needs, run :code:`opticks-info`
+After installing things, rerun opticks-info to check opticks variables and requirements are met.
 
 Opticks Externals
 =================
-Opticks has many externals (as of writing this the documentation of Opticks still isn't ideal for this...)
-In this guide, as much as possible will be put into a directory :code:`opticks_externals`.
-
 Opticks has many external dependencies;
 
 * cmake (3.14+)
@@ -109,7 +126,7 @@ cmake
     curl -L -O ${url}
     tar zxvf cmake-${cmake_ver}.tar.gz
     cd cmake-${cmake_ver}
-    ./bootstrap --system-curl #system-curl needed for G4 SSL download
+    ./bootstrap
     gmake
     sudo make install
 
@@ -126,90 +143,8 @@ boost
     curl -L -O ${url}
     tar zxf ${boost_name}.tar.gz
     cd ${boost_name}
-    ./bootstrap.sh --prefix=${dir}/$boost_name
+    ./bootstrap.sh --prefix=${dir}
     ./b2 --prefix=${dir} --build-dir=${dir}/${boost_name}.build --with-system --with-thread --with-program_options --with-log --with-filesystem --with-regex install
-
-
-chlep
------
-.. code-block:: sh
-
-    chlep_version=2.4.1.0
-    url=http://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/tarFiles/clhep-${clhep_version}.tgz
-    dir=${OPTICKS_EXTERNALS}/chlep
-    mkdir -p $dir
-    cd $dir
-    curl -L -O $url
-    tar zxf $(basename $url)
-    mkdir clhep_${clhep_version}.build
-    cd clhep_${clhep_version}.build
-    cmake ../${clhep_version}/CLHEP
-    make
-    sudo make install
-
-xcerses
--------
-.. code-block:: sh
-
-    xerces_version=3.1.1
-    url=http://archive.apache.org/dist/xerces/c/3/sources/xerces-c-${xerces_version}.tar.gz
-    dir=${OPTICKS_EXTERNALS}/xerces
-    mkdir -p $dir
-    cd $dir
-    curl -L -O $url
-    tar zxf $(basename $url)
-    cd xerces-c-${xerces_version}
-    ./configure --prefix=${dir}/build
-    mkdir ../build
-    sudo make install
-
-Geant4
-------
-Note, in order to use G4.10.06 needs gcc 4.9.3+.
-Defaul is likely to be 4.8.5 (CentOS7)
-
-.. code-block:: sh
-
-    g4_version=geant4.10.06.p02
-    dir=${OPTICKS_EXTERNALS}/g4
-    mkdir -p ${dir}
-    cd ${dir}
-    url=http://cern.ch/geant4-data/releases/${g4_version}.tar.gz
-    curl -L -O $url
-    tar zxf ${g4_version}.tar.gz
-    mkdir ${g4_version}.build
-    cd ${g4_version}.build
-    cmake -G "Unix Makefiles" \
-          -DCMAKE_BUILD_TYPE=Debug \
-          -DGEANT4_INSTALL_DATA=ON \
-          -DGEANT4_USE_GDML=ON \
-          -DGEANT4_USE_SYSTEM_CLHEP=ON \
-          -DGEANT4_INSTALL_DATA_TIMEOUT=3000 \
-          -DXERCESC_ROOT_DIR=/home/opc/opticks_externals/xerces/build \
-          -DCMAKE_INSTALL_PREFIX=${dir}/${g4_version}.build \
-          ${dir}/${g4_version}
-    make
-    make install
-
-For gcc...
-
-.. code-block:: sh
-
-    sudo yum install centos-release-scl
-    sudo yum install devtoolset-7
-    scl enable devtoolset-7 bash # if added to opticks_config.sh will need Ctlr + C twice
-
-Opticks Full
-============
-This is not the end of the external packages, but the remainder are smaller and are installed as part of :code:`opticks-full`.
-
-
-
-
-
-
-
-
 
 bcm
 ---

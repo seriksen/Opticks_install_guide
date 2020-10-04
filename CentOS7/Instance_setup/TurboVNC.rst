@@ -9,7 +9,7 @@ These require the NVIDIA grid GPU version (see NVIDIA_Externals)
 .. code-block:: sh
 
     sudo init 3
-    sudo passwd opc
+    sudo passwd opc # EggyBread
     sudo yum -y install https://downloads.sourceforge.net/project/virtualgl/2.6.3/VirtualGL-2.6.3.x86_64.rpm
     sudo yum -y install gdm
     sudo yum -y install https://downloads.sourceforge.net/project/turbovnc/2.2.4/turbovnc-2.2.4.x86_64.rpm
