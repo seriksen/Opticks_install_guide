@@ -247,6 +247,13 @@ It's best to use conda (not what's being done here)
 And then set Opticks to use python3 in :code:`opticks_config.sh`. Add :code:`export OPTICKS_PYTHON=python3`.
 For additional information on version requirements, see older guides.
 
+Also (don't know if needed, but keeping from older install), add cmake flags to :code:`opticks_config.sh`
+
+.. code-block:: sh
+
+    export CXXFLAGS="$CXXFLAGS -fPIC"
+    export CFLAGS="$CFLAGS -fPIC"
+
 
 Running tests
 -------------
@@ -270,6 +277,6 @@ As of right now, 2 tests will fail and 4 will be slow;
 The fails are due to python not finding the :code:`opticks` module.
 
 To correct this, add ${HOME} to PYTHONPATH.
-Ie in :code:`opticks_config.sh` add :code:`export PYTHONPATH=${HOME};${PYTHONPATH}.
+Ie in :code:`opticks_config.sh` add :code:`export PYTHONPATH=${HOME};${PYTHONPATH}`.
 
 After this, no tests will fail
