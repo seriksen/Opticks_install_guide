@@ -106,23 +106,23 @@ boost
     tar zxf ${boost_name}.tar.gz
     cd ${boost_name}
     ./bootstrap.sh --prefix=${dir}/$boost_name
-    ./b2 --prefix=${dir} --build-dir=${dir}/${boost_name}.build --with-system --with-thread --with-program_options --with-log --with-filesystem --with-regex install
+    ./b2 --prefix=${dir}/${boost_name}-install --build-dir=${dir}/${boost_name}-build --with-system --with-thread --with-program_options --with-log --with-filesystem --with-regex install
 
 
-chlep
+clhep
 -----
 .. code-block:: sh
 
-    chlep_version=2.4.1.0
+    clhep_version=2.4.1.0
     url=http://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/tarFiles/clhep-${clhep_version}.tgz
-    dir=${OPTICKS_EXTERNALS}/chlep
+    dir=${OPTICKS_EXTERNALS}/clhep
     mkdir -p $dir
     cd $dir
     curl -L -O $url
     tar zxf $(basename $url)
-    mkdir clhep_${clhep_version}.build
-    cd clhep_${clhep_version}.build
-    cmake ../${clhep_version}/CLHEP
+    mkdir clhep_${clhep_version}-build
+    cd clhep_${clhep_version}-build
+    cmake -DCMAKE_INSTALL_PREFIX=${dir}/clhep_${clhep_version}-install ../${clhep_version}/CLHEP
     make
     sudo make install
 
@@ -157,8 +157,8 @@ Earlier versions are fine with 4.8.5.
     url=http://cern.ch/geant4-data/releases/${g4_version}.tar.gz
     curl -L -O $url
     tar zxf ${g4_version}.tar.gz
-    mkdir ${g4_version}.build
-    cd ${g4_version}.build
+    mkdir ${g4_version}-build
+    cd ${g4_version}-build
     cmake -G "Unix Makefiles" \
           -DCMAKE_BUILD_TYPE=Debug \
           -DGEANT4_INSTALL_DATA=ON \
@@ -166,9 +166,9 @@ Earlier versions are fine with 4.8.5.
           -DGEANT4_USE_SYSTEM_CLHEP=ON \
           -DGEANT4_INSTALL_DATA_TIMEOUT=3000 \
           -DXERCESC_ROOT_DIR=/home/opc/opticks_externals/xerces/build \
-          -DCMAKE_INSTALL_PREFIX=${dir}/${g4_version}.build \
+          -DCMAKE_INSTALL_PREFIX=${dir}/${g4_version}-install \
           ${dir}/${g4_version}
-    make
+    make -j 10
     make install
 
 For gcc...
