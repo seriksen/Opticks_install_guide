@@ -138,14 +138,13 @@ xcerses
     curl -L -O $url
     tar zxf $(basename $url)
     cd xerces-c-${xerces_version}
-    ./configure --prefix=${dir}/build
-    mkdir ../build
+    ./configure --prefix=${dir}/xerces-c-${xerces_version}-install
     sudo make install
 
 Geant4
 ------
 Note, in order to use G4.10.06 needs gcc 4.9.3+.
-Defaul is likely to be 4.8.5 (CentOS7).
+Default is likely to be 4.8.5 (CentOS7).
 Earlier versions are fine with 4.8.5.
 
 .. code-block:: sh
@@ -164,8 +163,9 @@ Earlier versions are fine with 4.8.5.
           -DGEANT4_INSTALL_DATA=ON \
           -DGEANT4_USE_GDML=ON \
           -DGEANT4_USE_SYSTEM_CLHEP=ON \
+          -DCLHEP_ROOT_DIR=/home/opc/opticks_externals/clhep/clhep_2.4.1.0-install \
           -DGEANT4_INSTALL_DATA_TIMEOUT=3000 \
-          -DXERCESC_ROOT_DIR=/home/opc/opticks_externals/xerces/build \
+          -DXERCESC_ROOT_DIR=/home/opc/opticks_externals/xerces/xerces-c-${xerces_version}-install \
           -DCMAKE_INSTALL_PREFIX=${dir}/${g4_version}-install \
           ${dir}/${g4_version}
     make -j 10
