@@ -183,24 +183,7 @@ Opticks Full
 ============
 This is not the end of the external packages, but the remainder are smaller and are installed as part of :code:`opticks-full`.
 
-Set locations in :code:`opticks_config.sh`.
-
-Then edits to cmake.
-NOTE: If pulled from my fork, edits aren't needed.
-
-FindG4.cmake
-------------
-Edit line 46 to be; :code:`list(GET _dirs 30 _firstdir)`
-
-Edit line 100 to be; :code:`PATHS "${G4_DIR}/lib64")`
-
-
-FindOpticksXercesC.cmake
-------------------------
-Edit line 98 to be; :code:`/home/opc/opticks_externals/xerces/build/include`
-
-Edit line 114 to be; :code:`/home/opc/opticks_externals/xerces/build/lib`
-
+Set locations in :code:`opticks_config.sh`. See :doc:`opticks_config.sh`.
 
 Testing Opticks
 ===============
