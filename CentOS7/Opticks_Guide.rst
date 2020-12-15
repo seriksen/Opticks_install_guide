@@ -123,7 +123,7 @@ clhep
     mkdir clhep_${clhep_version}-build
     cd clhep_${clhep_version}-build
     cmake -DCMAKE_INSTALL_PREFIX=${dir}/clhep_${clhep_version}-install ../${clhep_version}/CLHEP
-    make
+    make -j 10
     sudo make install
 
 xcerses
@@ -163,7 +163,7 @@ Earlier versions are fine with 4.8.5.
           -DGEANT4_INSTALL_DATA=ON \
           -DGEANT4_USE_GDML=ON \
           -DGEANT4_USE_SYSTEM_CLHEP=ON \
-          -DCLHEP_ROOT_DIR=/home/opc/opticks_externals/clhep/clhep_2.4.1.0-install \
+          -DCLHEP_ROOT_DIR=/home/opc/opticks_externals/clhep/clhep_${clhep_version}-install \
           -DGEANT4_INSTALL_DATA_TIMEOUT=3000 \
           -DXERCESC_ROOT_DIR=/home/opc/opticks_externals/xerces/xerces-c-${xerces_version}-install \
           -DCMAKE_INSTALL_PREFIX=${dir}/${g4_version}-install \
@@ -175,8 +175,8 @@ For gcc...
 
 .. code-block:: sh
 
-    sudo yum install centos-release-scl
-    sudo yum install devtoolset-7
+    sudo yum -y install centos-release-scl
+    sudo yum -y install devtoolset-7
     scl enable devtoolset-7 bash # if added to opticks_config.sh will need Ctlr + C twice
 
 Opticks Full
@@ -184,6 +184,10 @@ Opticks Full
 This is not the end of the external packages, but the remainder are smaller and are installed as part of :code:`opticks-full`.
 
 Set locations in :code:`opticks_config.sh`. See :doc:`opticks_config.sh`.
+
+Add COMPUTECAPABILITY; The compute capability of the GPU can be found at https://developer.nvidia.com/cuda-gpus.
+6.1 = 61, 6.0 = 60 etc...
+
 
 Testing Opticks
 ===============
