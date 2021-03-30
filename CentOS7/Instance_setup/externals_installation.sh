@@ -18,7 +18,7 @@ sudo yum -y install git \
             curl-devel \
             openssl-devel
 
-export OPTICKS_EXTERNALS=/home/opc/opticks_externals
+export OPTICKS_EXTERNALS=${HOME}/opticks_externals
 
 cmake_ver=3.14.1
 dir=${OPTICKS_EXTERNALS}/cmake
